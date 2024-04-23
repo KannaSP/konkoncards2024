@@ -20,6 +20,13 @@
 	  I'll think about the security and service bombing management later. At least I can prevent bots by using CAPTCHA.
       Resolved: We're having people upload to the admins and have them add to the database. Be prepared for an onslaught of emails or discord messages, also, always check. Absolutely remind people to check before clicking any links, even if it looks trustable.
 	-->
+    <form name="user_number" accept-charset="utf-8">
+        <label for="username">User Name:</label><br>
+        <input type="text" id="username_input" name="username"><br>
+        <label for="last_pull_number">Last Pull Number</label><br>
+        <input type="text" id="last_pull_number_input" name="last_pull_number"><br>
+        <input type="button" id="pull_button" name="pull_card" value="Pull Card" onclick="pull_a_card()"><br>
+    </form>
     <div class="carddass_machine_wrapper">
         <div class="box_card_output">
             <div class="interaction_container">
@@ -45,7 +52,7 @@
         <img class="box_knob" id="knob_img" src="assets/knob.jpg" alt="knob" />
         
         <img class="box_wallet" id="wallet_img" src="assets/Wallet_Asset_closed.png" onmouseenter="wallet_open(event)" onmouseleave="wallet_close(event)" />
-    
+
         <div class="box_coin coin_container" onmouseenter="wallet_open_coin(event)" onmouseleave="wallet_close_coin(event)" id="coin_container" draggable="true" ondragstart="coin_init(event)" ondragend="coin_position_readjust(event)">
             <div class="sukonbu_coin"> <!-- This one gets rotated -->
                 <div class="coin coin_front">
@@ -61,8 +68,11 @@
         </div>
     </div>
     
+    <img id="card_image" src="blank.jpg" alt="blank" /><br>
     Current State: <p id="debug_state_display"></p>
     Target Div ID: <p id="ev_target_id"></p>
-	<script src="scripts/animations.js"></script>
+    <input type="button" id="reset_button" name="start_game" value="Reset" onclick="reset_start_button()">
+    <script type="module" src="scripts/randomizer.js"></script>
+    <script type="module" src="scripts/animations.js"></script>
   </body>
 </html>
