@@ -51,7 +51,7 @@ html, body{
 
 .card-background{
    position: relative;
-   background-image: url("75957635_p0.jpg");
+   background-image: url("../assets/75957635_p0.jpg");
    background-position: center;
    background-repeat: no-repeat;
    background-size: cover;
@@ -77,7 +77,7 @@ html, body{
 
 /* Coin Insert Specifications */
 .coin_hole{
-    background-image: url("coin_insert.jpg");
+    background-image: url("../assets/coin_insert.jpg");
     background-size: contain;
     repeat: no-repeat;
 }
@@ -99,12 +99,12 @@ html, body{
 }
 
 .coin_front{
-    background-image: url("coin front.jpg");
+    background-image: url("../assets/coin front.jpg");
     background-size: 50px;
 }
 
 .coin_back{
-    background-image: url("coin back.jpg");
+    background-image: url("../assets/coin back.jpg");
     background-size: 50px;
 }
 
