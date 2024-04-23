@@ -25,7 +25,6 @@
         <input type="text" id="username_input" name="username"><br>
         <label for="last_pull_number">Last Pull Number</label><br>
         <input type="text" id="last_pull_number_input" name="last_pull_number"><br>
-        <input type="button" id="pull_button" name="pull_card" value="Pull Card" onclick="pull_a_card()"><br>
     </form>
     <div class="carddass_machine_wrapper">
         <div class="box_card_output">
@@ -36,10 +35,10 @@
             <div class="LETTER_container TEST_CONTAINER">
                 <div class="LETTER TEST_LETTER" >
                     <div class="LETTER_content layer_5_card_front">
-                        nyan
+                        <img id="card_backside" src="no_illustration.jpg" />
                     </div>
                     <div class="LETTER_content layer_5_card_back">
-                        meow
+                        <img id="card_content_frontside" src="no_illustration.jpg" />
                     </div>
                 </div>
             </div>
