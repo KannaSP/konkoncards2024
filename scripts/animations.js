@@ -8,12 +8,12 @@ import { pull_a_card } from './randomizer.js';
 
 
 /* Wallet Function */
-function wallet_open(ev){
+export function wallet_open(ev){
     ev.target.src = "assets/Wallet_Asset_open.png";
     document.getElementById("coin_container").style.opacity = 1;
 }
 
-function wallet_close(ev){
+export function wallet_close(ev){
     ev.target.src = "assets/Wallet_Asset_closed.png";
     document.getElementById("coin_container").style.opacity = 0;
 }
@@ -22,12 +22,12 @@ function wallet_close(ev){
 written to prevent the coin disappearing as the mouse changes
 from the wallet's div to the coin's div. */
 
-function wallet_open_coin(ev){
+export function wallet_open_coin(ev){
     ev.target.style.opacity = 1;
     document.getElementById("wallet_img").src = "assets/Wallet_Asset_open.png";
 }
 
-function wallet_close_coin(ev){
+export function wallet_close_coin(ev){
     ev.target.style.opacity = 0;
     document.getElementById("wallet_img").src = "assets/Wallet_Asset_closed.png";
 }
@@ -38,21 +38,21 @@ function wallet_close_coin(ev){
 Source: https://www.w3schools.com/html/tryit.asp?filename=tryhtml5_draganddrop2
 */
 
-function coin_init(ev){
+export function coin_init(ev){
     ev.dataTransfer.setData("element_class", ev.target.class);
     document.getElementById("debug_state_display").innerHTML = "init completed";
     console.log("coin initialization completed");
 }
 
-function coin_enters_target(ev){
+export function coin_enters_target(ev){
     document.getElementById("debug_state_display").innerHTML = "entering target";
 }
 
-function coin_hovering(ev){
+export function coin_hovering(ev){
     ev.preventDefault();
 }
 
-function coin_drop(ev){
+export function coin_drop(ev){
     ev.preventDefault();
     var data = ev.dataTransfer.getData("element_class");
     if(ev.target.id !== "drop_target"){
@@ -69,11 +69,11 @@ function coin_drop(ev){
     }
 }
 
-function coin_position_readjust(ev){
+export function coin_position_readjust(ev){
     
 }
 
-function coin_leaves_target(ev){
+export function coin_leaves_target(ev){
     
 }
 
