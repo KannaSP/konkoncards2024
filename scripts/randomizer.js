@@ -1,4 +1,4 @@
-var SHUFFLE_STATE = "not_shuffled";var rearranged_array = [];var current_pull_position = 0;const ASSET_URL = "../card_images/";const filenames = ["kumarang_-1753780069288546428-01.jpg",
+var SHUFFLE_STATE = "not_shuffled";var rearranged_array = [];var current_pull_position = 0;const ASSET_URL = "card_images/";const filenames = ["kumarang_-1753780069288546428-01.jpg",
 "kumarang_-1755004946372825504-01.jpg",
  "kumarang_-1757769813890633749-01.jpg",
 "kumarang_-1758101118520009167-01.jpg",

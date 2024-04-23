@@ -69,6 +69,12 @@
             background-color: purple;
             transform: rotateX(180deg);
         }
+        
+        &.layer_5_card_back img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
     }
 
 }
