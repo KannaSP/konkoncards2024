@@ -5,6 +5,10 @@ html, body{
 
 /* Navigation Bar, from https://www.w3schools.com/css/css_navbar.asp */
 /* Add a black background color to the top navigation */
+.navbar {
+    position: fixed;
+}
+
 .navbar_vert{
   list-style-type: none;
   margin: 0;
@@ -43,6 +47,7 @@ html, body{
     padding: 0;
     overflow: hidden;
     background-color: #dddddd;
+    position: fixed;
 }
 
 .navbar_link_horz {
