@@ -9,7 +9,7 @@ html, body{
     position: fixed;
 }
 
-.navbar_vert{
+.navbar_vert ul{
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -21,11 +21,11 @@ html, body{
     border-bottom: 1px solid #555;
 }
 
-.navbar_link_vert:last_child {
+.navbar_link_vert li:last_child {
     border-bottom: none;
 }
 
-.navbar_link_vert a {
+.navbar_link_vert li a {
   display: block;
   width: 60px;
 }
@@ -41,7 +41,7 @@ html, body{
   color: white;
 }
 
-.navbar_horz {
+ul .navbar_horz {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -50,22 +50,22 @@ html, body{
     position: fixed;
 }
 
-.navbar_link_horz {
+.navbar_link_horz li {
     display: inline;
     float: left;
     border-right: 1px solid #fff;
 }
 
-.navbar_link_horz:last_child {
+.navbar_link_horz li:last_child {
     border-right: none;
 }
 
-.navbar_link_horz a {
+.navbar_link_horz li a {
     display: block;
     padding: 8px;
 }
 
-.navbar_link_horz a:hover {
+.navbar_link_horz li a:hover {
     background-color: #555;
     color: white;
 }
