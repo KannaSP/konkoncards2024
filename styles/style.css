@@ -46,22 +46,22 @@ ul .navbar_horz {
     background-color: #dddddd;
 }
 
-.navbar_link_horz li {
+li .navbar_link_horz {
     display: inline;
     float: left;
     border-right: 1px solid #fff;
 }
 
-.navbar_link_horz li:last_child {
+li:last_child .navbar_link_horz {
     border-right: none;
 }
 
-.navbar_link_horz li a {
+li a .navbar_link_horz {
     display: block;
     padding: 8px;
 }
 
-.navbar_link_horz li a:hover {
+li a:hover .navbar_link_horz {
     background-color: #555;
     color: white;
 }
