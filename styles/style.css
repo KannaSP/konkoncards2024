@@ -44,7 +44,6 @@ ul .navbar_horz {
     padding: 0;
     overflow: hidden;
     background-color: #dddddd;
-    position: fixed;
 }
 
 .navbar_link_horz li {
