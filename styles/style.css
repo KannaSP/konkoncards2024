@@ -6,7 +6,10 @@ html, body{
 /* Navigation Bar, from https://www.w3schools.com/css/css_navbar.asp */
 /* Add a black background color to the top navigation */
 
-.navbar_vert ul{
+.navbar{
+}
+
+ul .navbar_vert{
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -38,31 +41,34 @@ html, body{
   color: white;
 }
 
-ul .navbar_horz {
+ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #dddddd;
+    background-color: #000;
 }
 
-li .navbar_link_horz {
+li {
     display: inline;
     float: left;
-    border-right: 1px solid #fff;
+    border-right: 1px solid #ddd;
 }
 
 li:last_child .navbar_link_horz {
     border-right: none;
 }
 
-li a .navbar_link_horz {
+li a{
     display: block;
     padding: 8px;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
 }
 
-li a:hover .navbar_link_horz {
-    background-color: #555;
+li a:hover{
+    background-color: #AAA;
     color: white;
 }
 
