@@ -65,6 +65,22 @@ html, body{
     color: white;
 }
 
+.color_option_01 {
+    background-color: #36F1CD;
+}
+.color_option_02 {
+    background-color: #758CD6;
+}
+.color_option_03 {
+    background-color: #B8B8FF;
+}
+.color_option_04 {
+    background-color: #ABCFFF;
+}
+.color_option_05 {
+    background-color: #4B82A2;
+}
+
 /* Carddass Machine Wrapper */
 .carddass_machine_wrapper{
     left: 250px;
