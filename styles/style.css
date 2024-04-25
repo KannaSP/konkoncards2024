@@ -5,9 +5,6 @@ html, body{
 
 /* Navigation Bar, from https://www.w3schools.com/css/css_navbar.asp */
 /* Add a black background color to the top navigation */
-.navbar {
-    position: fixed;
-}
 
 .navbar_vert ul{
   list-style-type: none;
