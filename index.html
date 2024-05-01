@@ -10,99 +10,20 @@
 	
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/layers.css">
+    <link rel="stylesheet" href="styles/homepage.css">
   </head>
   <body>
-    <!--general rule:
-	  You have a background image and a text. Preferably, the background image is drawn in css or canvas,
-	  and can rescale with the user's zoom. It needs to be in portrait, like a letter. Landscape will be considered
-	  later.
-	  Every message gets a random card background that can flip around to reveal the message.
-	  I'll think about the security and service bombing management later. At least I can prevent bots by using CAPTCHA.
-      Resolved: We're having people upload to the admins and have them add to the database. Be prepared for an onslaught of emails or discord messages, also, always check. Absolutely remind people to check before clicking any links, even if it looks trustable.
-	-->
-    <ul class="navbar navbar_horz color_option_01">
-      <li class="navbar_link_horz" id="navbar_link_01"><a href="default.asp">Home</a></li>
-      <li class="navbar_link_horz" id="navbar_link_02"><a href="news.asp">News</a></li>
-      <li class="navbar_link_horz" id="navbar_link_03"><a href="contact.asp">Contact</a></li>
-      <li class="navbar_link_horz" id="navbar_link_04"><a href="about.asp">About</a></li>
-    </ul></br>
-    <ul class="navbar navbar_horz color_option_02">
-      <li class="navbar_link_horz" id="navbar_link_01"><a href="default.asp">Home</a></li>
-      <li class="navbar_link_horz" id="navbar_link_02"><a href="news.asp">News</a></li>
-      <li class="navbar_link_horz" id="navbar_link_03"><a href="contact.asp">Contact</a></li>
-      <li class="navbar_link_horz" id="navbar_link_04"><a href="about.asp">About</a></li>
-    </ul></br>
-    <ul class="navbar navbar_horz color_option_03">
-      <li class="navbar_link_horz" id="navbar_link_01"><a href="default.asp">Home</a></li>
-      <li class="navbar_link_horz" id="navbar_link_02"><a href="news.asp">News</a></li>
-      <li class="navbar_link_horz" id="navbar_link_03"><a href="contact.asp">Contact</a></li>
-      <li class="navbar_link_horz" id="navbar_link_04"><a href="about.asp">About</a></li>
-    </ul></br>
-    <ul class="navbar_horz color_option_04">
-      <li class="navbar_link_horz" id="navbar_link_01"><a href="default.asp">Home</a></li>
-      <li class="navbar_link_horz" id="navbar_link_02"><a href="news.asp">News</a></li>
-      <li class="navbar_link_horz" id="navbar_link_03"><a href="contact.asp">Contact</a></li>
-      <li class="navbar_link_horz" id="navbar_link_04"><a href="about.asp">About</a></li>
-    </ul></br>
-    <ul class="navbar navbar_horz color_option_05">
-      <li class="navbar_link_horz" id="navbar_link_01"><a href="default.asp">Home</a></li>
-      <li class="navbar_link_horz" id="navbar_link_02"><a href="news.asp">News</a></li>
-      <li class="navbar_link_horz" id="navbar_link_03"><a href="contact.asp">Contact</a></li>
-      <li class="navbar_link_horz" id="navbar_link_04"><a href="about.asp">About</a></li>
-    </ul> </br>
-    <form name="user_number" accept-charset="utf-8">
-        <label for="username">User Name:</label><br>
-        <input type="text" id="username_input" name="username"><br>
-        <label for="last_pull_number">Last Pull Number</label><br>
-        <input type="text" id="last_pull_number_input" name="last_pull_number"><br>
-    </form>
-    <div class="carddass_machine_wrapper">
-        <div class="box_card_output">
-            <div class="interaction_container">
-            <span class="layer_3_card_disp">
-                <img src="assets/carddispenser.jpg" alt="Card Dispenser">
-            </span>
-            <div class="LETTER_container TEST_CONTAINER">
-                <div class="LETTER TEST_LETTER" >
-                    <div class="LETTER_content layer_5_card_front">
-                        <img id="card_backside" src="no_illustration.jpg" />
-                    </div>
-                    <div class="LETTER_content layer_5_card_back">
-                        <img id="card_content_frontside" src="card_images\kumarang_-1753780069288546428-01.jpg" />
-                    </div>
-                </div>
-            </div>
+    <div id="container" class="container-div">
+        <img src="assets/Spinning light decoration.png" id="spinning-light" class="normal-spinning-light" />
+        <img src="assets/Corner rail decoration long.png" id="corner-rail-decor-upper-left" class="corner-rail-decor upper-left-corner normal-rail-animation" />
+        <div id="left-graphical-zone" class="graphical-zone idle-animation">
         </div>
-        </div>        
-        <div class="box_coin_insert coin_hole">
-            <img class="drop_target" src="assets/coin_hole.png" alt="Back-side of the coin" id="drop_target" ondragenter="coin_enters_target(event)" ondragover="coin_hovering(event)" ondrop="coin_drop(event)" ondragleave="coin_leaves_target(event)">
+        <div id="right-interaction-zone" class="interaction-zone active-animation">
+            <img src="assets/Play card.png" id="play-card" class="homepage-card play-card card-idle-animation"/>
+            <img src="assets/Collection card.png" id="collection-card" class="homepage-card collection-card card-idle-animation"/>
+            <img src="assets/Credit card.png" id="credit-card" class="homepage-card credit-card card-idle-animation"/>
         </div>
-        
-        <img class="box_knob" id="knob_img" src="assets/knob.jpg" alt="knob" />
-        
-        <img class="box_wallet" id="wallet_img" src="assets/Wallet_Asset_closed.png" onmouseenter="wallet_open(event)" onmouseleave="wallet_close(event)" />
-
-        <div class="box_coin coin_container" onmouseenter="wallet_open_coin(event)" onmouseleave="wallet_close_coin(event)" id="coin_container" draggable="true" ondragstart="coin_init(event)" ondragend="coin_position_readjust(event)">
-            <div class="sukonbu_coin"> <!-- This one gets rotated -->
-                <div class="coin coin_front">
-                    <img src="assets/transparent_coin_circle_50px.png" alt="Front-side of the coin">
-                </div>
-                <div class="coin coin_back">
-                    <img src="assets/transparent_coin_circle_50px.png" alt="Back-side of the coin">
-                </div>
-                <div class="coin coin_side">
-                    <img src="assets/coin side.png" alt="The side of the coin">
-                </div>
-            </div>
-        </div>
+        <img src="assets/Corner rail decoration long.png" id="corner-rail-decor-bottom-right" class="corner-rail-decor bottom-right-corner normal-rail-animation" />
     </div>
-    
-    <img id="card_image" src="blank.jpg" alt="blank" /><br>
-    Current State: <p id="debug_state_display"></p>
-    Target Div ID: <p id="ev_target_id"></p>
-    <input type="button" id="reset_button" name="start_game" value="Reset" onclick="reset_start_button()">
-    <script type="module" src="scripts/randomizer.js"></script>
-    <script type="module" src="scripts/animations.js"></script>
-    <script type="module" src="scripts/main.js"></script>
   </body>
 </html>
