@@ -10,6 +10,7 @@
 	
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/layers.css">
+    <link rel="stylesheet" href="styles/game.css">
   </head>
   <body>
     <!--general rule:
@@ -35,20 +36,20 @@
     <div class="carddass_machine_wrapper">
         <div class="box_card_output">
             <div class="interaction_container">
-            <span class="layer_3_card_disp">
-                <img src="assets/carddispenser.jpg" alt="Card Dispenser">
-            </span>
-            <div class="LETTER_container TEST_CONTAINER">
-                <div class="LETTER TEST_LETTER" >
-                    <div class="LETTER_content layer_5_card_front">
-                        <img id="card_backside" src="no_illustration.jpg" />
-                    </div>
-                    <div class="LETTER_content layer_5_card_back">
-                        <img id="card_content_frontside" src="card_images\kumarang_-1753780069288546428-01.jpg" />
+                <span class="layer_3_card_disp">
+                    <img src="assets/carddispenser.jpg" alt="Card Dispenser">
+                </span>
+                <div class="LETTER_container TEST_CONTAINER">
+                    <div class="LETTER TEST_LETTER" >
+                        <div class="LETTER_content layer_5_card_front">
+                            <img id="card_backside" src="no_illustration.jpg" />
+                        </div>
+                        <div class="LETTER_content layer_5_card_back">
+                            <img id="card_content_frontside" src="card_images\kumarang_-1753780069288546428-01.jpg" />
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
         </div>        
         <div class="box_coin_insert coin_hole">
             <img class="drop_target" src="assets/coin_hole.png" alt="Back-side of the coin" id="drop_target" ondragenter="coin_enters_target(event)" ondragover="coin_hovering(event)" ondrop="coin_drop(event)" ondragleave="coin_leaves_target(event)">
