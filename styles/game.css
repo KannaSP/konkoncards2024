@@ -1,11 +1,11 @@
-form, div, ul{
+form, ul{
     margin: auto;
     width: 50%;
 }
 
 /* Carddass Machine Wrapper */
 .carddass_machine_wrapper{
-    left: 250px;
+    margin: auto;
     width: 700px;  /* 50px per column */
     height: 700px;  /* 14 rows */
     display: grid;
