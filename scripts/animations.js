@@ -4,7 +4,7 @@
     3. 
 */
 
-import { pull_a_card } from './randomizer.js';
+import { pull_a_card } from './game.js';
 
 
 /* Wallet Function */
