@@ -103,6 +103,7 @@
     width: 40%;
     position: absolute;
     z-index: 100;
+    opacity: 90%;
 }
 
 .play-card{
@@ -122,15 +123,18 @@
 }
 
 img.play-card:hover{
-    transform: translate(10px 10px);
+    transform: translate(-10px, -10px);
+    opacity: 100%;
 }
 
-.collection-card:hover{
-    transform: translate(10px 10px);
+img.collection-card:hover{
+    transform: translate(10px, 10px);
+    opacity: 100%;
 }
 
-.credit-card:hover{
-    transform: translate(10px 10px);
+img.credit-card:hover{
+    transform: translate(-10px, 10px);
+    opacity: 100%;  
 }
 
 /* Standard resolution taken from:
