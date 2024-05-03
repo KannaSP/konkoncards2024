@@ -216,3 +216,21 @@ TODO: Change this to mobile-first later, if a lot of people uses this.
         top: 10%;
     }
 }
+
+/* For Error Dialogs */
+
+error_dialog{
+    position: absolute;
+    height: 350px;
+    width: 350px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.error_dialog_hidden {
+    transform: scale(0);
+}
+.error_dialog_show {
+    transform: scale(1);
+}

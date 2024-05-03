@@ -7,6 +7,10 @@
 
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>HTML 5 Boilerplate</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
 	
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/layers.css">
@@ -21,19 +25,24 @@
 	  I'll think about the security and service bombing management later. At least I can prevent bots by using CAPTCHA.
       Resolved: We're having people upload to the admins and have them add to the database. Be prepared for an onslaught of emails or discord messages, also, always check. Absolutely remind people to check before clicking any links, even if it looks trustable.
 	-->
-    <ul class="navbar_horz color_option_04">
-      <li class="navbar_link_horz" id="navbar_link_01"><a href="default.asp">Home</a></li>
-      <li class="navbar_link_horz" id="navbar_link_02"><a href="news.asp">News</a></li>
-      <li class="navbar_link_horz" id="navbar_link_03"><a href="contact.asp">Contact</a></li>
-      <li class="navbar_link_horz" id="navbar_link_04"><a href="about.asp">About</a></li>
-    </ul></br>
-    <form name="user_number" accept-charset="utf-8">
-        <label for="username">User Name:</label><br>
-        <input type="text" id="username_input" name="username"><br>
-        <label for="last_pull_number">Last Pull Number</label><br>
-        <input type="text" id="last_pull_number_input" name="last_pull_number"><br>
+    <div class="navigation_bar color_option_04">
+        <ul class="navbar_horz color_option_04">
+          <li class="navbar_link_horz" id="navbar_link_01"><a href="index.html">Home</a></li>
+          <li class="navbar_link_horz" id="navbar_link_02"><a href="game.html">Game</a></li>
+          <li class="navbar_link_horz" id="navbar_link_03"><a href="credits.html">Credits</a></li>
+          <li class="navbar_link_horz" id="navbar_link_04"><a href="album.html">Album</a></li>
+        </ul>
+    </div>
+    
+    <form id="entry_form" name="user_number" accept-charset="utf-8" class="form_normal">
+        <label for="username" class="input_system noto_sans_jp_p" >User Name:</label> </br>
+        <input type="text" id="username_input" name="username" class="input_system" > </br>
+        <label for="last_pull_number" class="input_system noto_sans_jp_p" >Last Pull Number:</label> </br>
+        <input type="text" id="last_pull_number_input" name="last_pull_number" class="input_system" ><br>
+        <div onclick="start_game()" class="start_game noto_sans_jp_p"> Start Game! </div>
     </form>
-    <div class="carddass_machine_wrapper">
+    
+    <div id="carddass_machine_wrapper" class="carddass_machine_wrapper opacity_hidden">
         <div class="box_card_output">
             <div class="interaction_container">
                 <span class="layer_3_card_disp">
@@ -74,12 +83,48 @@
         </div>
     </div>
     
-    <img id="card_image" src="blank.jpg" alt="blank" /><br>
+    <div id="error_dialog_popup" class="error_dialog error_dialog_hidden">
+        <p id="error_dialog_text"> Sorry, an error occurred! Please notify the administrator for assistance. </p>
+        <div id="error_dialog_button" class="error_dialog_button" onclick="hide_error_dialog()"> <p>Close</p> </div>
+    </div>
+    
+    <!-- <img id="card_image" src="blank.jpg" alt="blank" /><br>
     Current State: <p id="debug_state_display"></p>
     Target Div ID: <p id="ev_target_id"></p>
-    <input type="button" id="reset_button" name="start_game" value="Reset" onclick="reset_start_button()">
-    <script type="module" src="scripts/randomizer.js"></script>
+    <input type="button" id="reset_button" name="start_game" value="Reset" onclick="reset_start_button()"> -->
+    <script type="module" src="scripts/game.js"></script>
     <script type="module" src="scripts/animations.js"></script>
     <script type="module" src="scripts/main.js"></script>
+    <script type="text/javascript">
+        function start_game(){
+            form_object = document.forms.user_number;
+            if(form_object.elements.username.value == "") {
+                show_error_dialog("Please insert a username to start the game!");
+                return 1;
+            }
+            if(form_object.elements.last_pull_number.value <= 0) {
+                show_error_dialog("Last pull number must be larger than 0!");
+                return 2;
+            }
+            
+            document.getElementById('entry_form').classList.add('form_transition');
+            const carddass = document.getElementById('carddass_machine_wrapper');
+            carddass.classList.remove('opacity_hidden');
+            carddass.classList.add('fade_in_machine_2s');
+        }
+        
+        function show_error_dialog(error_msg){
+            document.getElementById('error_dialog_popup').classList.remove('error_dialog_hidden');
+            document.getElementById('error_dialog_popup').classList.add('error_dialog_show');
+            document.getElementById('error_dialog_text').innerHTML = error_msg;
+        }
+        
+        function hide_error_dialog(){
+            document.getElementById('error_dialog_popup').classList.remove('error_dialog_show');
+            document.getElementById('error_dialog_popup').classList.add('error_dialog_hidden');
+            document.getElementById('error_dialog_text').innerHTML = 
+                ' Sorry, an error occurred! Please notify the administrator for assistance. ';
+        }
+    </script>
   </body>
 </html>

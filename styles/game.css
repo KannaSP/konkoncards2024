@@ -1,6 +1,75 @@
-form, ul{
+.navigation_bar{
+    text-align: center;
+}
+
+ul{
+    display: inline-block;
+    text-align: left;
+}
+
+li{
+    min-width: 175px;
+}
+
+p{
+  font-family: "Noto Sans JP", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.noto_sans_jp_p {
+  font-family: "Noto Sans JP", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.form_normal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     margin: auto;
+    max-width: 700px;
+    max-height: 300px;
+}
+
+.form_transition {
+    animation: fade_out 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fade_out {
+    0% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    100% { opacity: 0; transform: translate(-50%, -50%) scale(0); }
+}
+
+.input_system {
+    margin-bottom: 10px;
+}
+
+.input_system label, input{
+    min-width: 25%;
+}
+
+.input_system button {
     width: 50%;
+    height: 20px;
+}
+
+.start_game{
+    height: 48px;
+    position: relative;
+    background-color: rgb(145,216,256);
+    display : flex;
+    align-items : center;
+    justify-content: center;
+    font-size: 18pt;
+}
+
+body{
+    background-image: url("../assets/Menu_BG.png");
 }
 
 /* Carddass Machine Wrapper */
@@ -12,6 +81,21 @@ form, ul{
     grid-template-columns: repeat(14, 1fr);
     grid-auto-rows: 50px;
     border: solid red;
+}
+
+.opacity_hidden {
+    opacity: 0;
+    display: none;
+}
+
+.fade_in_machine_2s {
+    animation: fade_in 3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fade_in {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }
 
 .box_card_output{
@@ -113,7 +197,6 @@ form, ul{
     height: 50px;
 }
 
-
 /* Knob Specifications */
 
 #knob_img{
@@ -124,4 +207,49 @@ form, ul{
 .knob_turned{
     transform: rotate(360deg);
     transition: transform 1s ease-in;
+}
+
+/* For Error Dialogs */
+
+.error_dialog{ 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-height: 350px;
+    min-width: 350px;
+    background-color: rgb(255, 226, 125);
+    border: 4px solid black;
+    border-radius: 20px;
+}
+
+.error_dialog p{ 
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    font-size: 14pt;
+    text-align: center;
+}
+
+.error_dialog_hidden {
+    transform: scale(0);
+}
+.error_dialog_show {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.error_dialog_button {
+    position: absolute;
+    left: 50%;
+    top: 70%;
+    transform: translate(-70%, -50%);
+}
+
+.error_dialog_button p{
+    min-width: 150px;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: rgb(255, 253, 163);
 }
