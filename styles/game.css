@@ -218,6 +218,8 @@ body{
     transform: translate(-50%, -50%);
     min-height: 350px;
     min-width: 350px;
+    background-image: url("../assets/error box.png");
+    background-size: contain;
     background-color: rgb(255, 226, 125);
     border: 4px solid black;
     border-radius: 20px;
@@ -225,7 +227,7 @@ body{
 
 .error_dialog p{ 
     position: absolute;
-    top: 30%;
+    top: 20%;
     left: 50%;
     transform: translate(-50%, -30%);
     font-size: 14pt;
@@ -242,7 +244,7 @@ body{
 .error_dialog_button {
     position: absolute;
     left: 50%;
-    top: 70%;
+    top: 50%;
     transform: translate(-70%, -50%);
 }
 
