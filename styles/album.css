@@ -1,0 +1,53 @@
+/* For Homepage Styling */
+.container-div {
+    width: 100%;
+    height: 100%;
+    background-image: url("../assets/Menu_BG.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: scroll;
+    background-size: cover;
+    position: absolute;
+    z-index: 0;
+}
+
+.grid_style{
+}
+
+.shelf_container{
+    width: 95%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.hide_shelf{
+    top: 100%;
+    display: none;
+    opacity: 0;
+}
+
+.shelf{
+    width: fit-content;
+    margin-left: 40px;
+    height: 225px;
+    overflow: visible;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.card_on_display{
+    height: 200px;
+    width: 142px;
+    background-color: white;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.shelf_rack{
+    width: 110%;
+    height: 24px;
+    background-color: white;
+    border: 1px solid black;
+    transform: translateX(-5%);
+}

@@ -14,29 +14,70 @@
 	
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/layers.css">
-    <link rel="stylesheet" href="styles/homepage.css">
+    <link rel="stylesheet" href="styles/album.css">
   </head>
   <body>
-    <div id="container" class="container-div">
-        <img src="assets/Spinning light decoration.png" id="spinning-light" class="normal-spinning-light" />
-        <img src="assets/Corner rail decoration long.png" id="corner-rail-decor-upper-left" class="corner-rail-decor upper-left-corner normal-rail-animation" />
-        <div id="graphical-zone" class="graphical-zone idle-animation">
-            <img src="assets/konkoncards_20240428210353.png" id="konkoncards" class="title_text" />
+    <div id="container" class="container-div grid_style" onscroll="album_scrolling_event()">
+        <div id="shelf_a_container" class="shelf_container">
+            <div id="shelf_no_1a" class="shelf">
+                <img id="card-collection-1" class="card_on_display" />
+                <img id="card-collection-2" class="card_on_display" />
+                <img id="card-collection-3" class="card_on_display" />
+                <br/>
+                <img class="shelf_rack" />
+            </div>
+            <div id="shelf_no_2a" class="shelf">
+                <img id="card-collection-5" class="card_on_display" />
+                <img id="card-collection-6" class="card_on_display" />
+                <img id="card-collection-7" class="card_on_display" />
+                <br/>
+                <img class="shelf_rack" />
+            </div>
+            <div id="shelf_no_3a" class="shelf">
+                <img id="card-collection-9" class="card_on_display" />
+                <img id="card-collection-10" class="card_on_display" />
+                <img id="card-collection-11" class="card_on_display" />
+                <br/>
+                <img class="shelf_rack" />
+            </div>
+            <div id="shelf_no_4a" class="shelf">
+                <img id="card-collection-13" class="card_on_display" />
+                <img id="card-collection-14" class="card_on_display" />
+                <img id="card-collection-15" class="card_on_display" />
+                <br/>
+                <img class="shelf_rack" />
+            </div>
         </div>
-        <div id="interaction-zone" class="interaction-zone active-animation">
-            <a href="game.html">
-                <img src="assets/Play card.png" id="play-card" class="homepage-card play-card card-idle-animation"/>
-            </a>
-            
-            <a href="game.html">
-                <img src="assets/Collection card.png" id="collection-card" class="homepage-card collection-card card-idle-animation"/>
-            </a>
-            
-            <a href="credit.html">
-                <img src="assets/Credit card.png" id="credit-card" class="homepage-card credit-card card-idle-animation"/>
-            </a>
+        <div id="shelf_b_container" class="shelf_container">
+            <div id="shelf_no_1b" class="shelf">
+                <img id="card-collection-1" class="card_on_display" />
+                <img id="card-collection-2" class="card_on_display" />
+                <img id="card-collection-3" class="card_on_display" />
+                <br/>
+                <img class="shelf_rack" />
+            </div>
+            <div id="shelf_no_2b" class="shelf">
+                <img id="card-collection-5" class="card_on_display" />
+                <img id="card-collection-6" class="card_on_display" />
+                <img id="card-collection-7" class="card_on_display" />
+                <br/>
+                <img class="shelf_rack" />
+            </div>
+            <div id="shelf_no_3b" class="shelf">
+                <img id="card-collection-9" class="card_on_display" />
+                <img id="card-collection-10" class="card_on_display" />
+                <img id="card-collection-11" class="card_on_display" />
+                <br/>
+                <img class="shelf_rack" />
+            </div>
+            <div id="shelf_no_4b" class="shelf">
+                <img id="card-collection-13" class="card_on_display" />
+                <img id="card-collection-14" class="card_on_display" />
+                <img id="card-collection-15" class="card_on_display" />
+                <br/>
+                <img class="shelf_rack" />
+            </div>
         </div>
-        <img src="assets/Corner rail decoration long.png" id="corner-rail-decor-bottom-right" class="corner-rail-decor bottom-right-corner normal-rail-animation" />
     </div>
   </body>
 </html>
