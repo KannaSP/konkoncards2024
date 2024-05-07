@@ -1,0 +1,39 @@
+body {
+    background-image: url("../assets/Menu_BG.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: 0;
+    display: flex;
+}
+
+.container-div {
+    flex-basis: 33%;
+    flex-wrap: nowrap;
+}
+
+.left-div {
+    left: 0%;
+}
+
+.middle-div {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.credit_texts {
+    text-align: center;
+}
+
+.right-div {
+}
+
+.credits_art{
+    width: 50%;
+}
+
+.img_end {
+    width: 100%;
+}
+
