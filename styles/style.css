@@ -93,3 +93,12 @@ li a:hover{
 .color_option_05 {
     background-color: #4B82A2;
 }
+
+
+/* For Google Fonts */
+.noto_sans_jp_p {
+  font-family: "Noto Sans JP", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
