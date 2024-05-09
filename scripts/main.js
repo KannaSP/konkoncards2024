@@ -44,3 +44,7 @@ function hide_error_dialog(){
     document.getElementById('error_dialog_text').innerHTML = 
         ' Sorry, an error occurred! Please notify the administrator for assistance. ';
 }
+
+window.start_game = start_game;
+window.show_error_dialog = show_error_dialog;
+window.hide_error_dialog = hide_error_dialog;
