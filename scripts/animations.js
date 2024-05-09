@@ -119,3 +119,17 @@ async function CA_animation_running() {
   console.log("flip and return");
   document.getElementById("knob_img").classList.remove("knob_turned");
 }
+
+/* Importing Statements */
+
+window.wallet_open = wallet_open;
+window.wallet_close = wallet_close;
+window.wallet_open_coin = wallet_open_coin;
+window.wallet_close_coin = wallet_close_coin;
+
+window.coin_init = coin_init;
+window.coin_enters_target = coin_enters_target;
+window.coin_hovering = coin_hovering;
+window.coin_drop = coin_drop;
+window.coin_position_readjust = coin_position_readjust;
+window.coin_leaves_target = coin_leaves_target;
