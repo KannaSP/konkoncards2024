@@ -42,42 +42,44 @@
         <div onclick="start_game()" class="start_game noto_sans_jp_p"> Start Game! </div>
     </form>
     
-    <div id="carddass_machine_wrapper" class="carddass_machine_wrapper opacity_hidden">
-        <div class="box_card_output">
-            <div class="interaction_container">
-                <span class="layer_3_card_disp">
-                    <img src="assets/carddispenser.jpg" alt="Card Dispenser">
-                </span>
-                <div class="LETTER_container TEST_CONTAINER">
-                    <div class="LETTER TEST_LETTER" >
-                        <div class="LETTER_content layer_5_card_front">
-                            <img id="card_backside" src="no_illustration.jpg" />
-                        </div>
-                        <div class="LETTER_content layer_5_card_back">
-                            <img id="card_content_frontside" src="card_images\kumarang_-1753780069288546428-01.jpg" />
+    <div id="game_section" class="game_section opacity_hidden">
+        <div id="carddass_machine_wrapper" class="carddass_machine_wrapper">
+            <div class="box_card_output">
+                <div class="interaction_container">
+                    <span class="layer_3_card_disp">
+                        <img src="assets/carddispenser.jpg" alt="Card Dispenser">
+                    </span>
+                    <div class="LETTER_container TEST_CONTAINER">
+                        <div class="LETTER TEST_LETTER" >
+                            <div class="LETTER_content layer_5_card_front">
+                                <img id="card_backside" src="no_illustration.jpg" />
+                            </div>
+                            <div class="LETTER_content layer_5_card_back">
+                                <img id="card_content_frontside" src="card_images\kumarang_-1753780069288546428-01.jpg" />
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>        
+            <div class="box_coin_insert coin_hole">
+                <img class="drop_target" src="assets/coin_hole.png" alt="Back-side of the coin" id="drop_target" ondragenter="coin_enters_target(event)" ondragover="coin_hovering(event)" ondrop="coin_drop(event)" ondragleave="coin_leaves_target(event)">
             </div>
-        </div>        
-        <div class="box_coin_insert coin_hole">
-            <img class="drop_target" src="assets/coin_hole.png" alt="Back-side of the coin" id="drop_target" ondragenter="coin_enters_target(event)" ondragover="coin_hovering(event)" ondrop="coin_drop(event)" ondragleave="coin_leaves_target(event)">
-        </div>
-        
-        <img class="box_knob" id="knob_img" src="assets/knob.jpg" alt="knob" />
-        
-        <img class="box_wallet" id="wallet_img" src="assets/Wallet_Asset_closed.png" onmouseenter="wallet_open(event)" onmouseleave="wallet_close(event)" />
+            
+            <img class="box_knob" id="knob_img" src="assets/knob.jpg" alt="knob" />
+            
+            <img class="box_wallet" id="wallet_img" src="assets/Wallet_Asset_closed.png" onmouseenter="wallet_open(event)" onmouseleave="wallet_close(event)" />
 
-        <div class="box_coin coin_container" onmouseenter="wallet_open_coin(event)" onmouseleave="wallet_close_coin(event)" id="coin_container" draggable="true" ondragstart="coin_init(event)" ondragend="coin_position_readjust(event)">
-            <div class="sukonbu_coin"> <!-- This one gets rotated -->
-                <div class="coin coin_front">
-                    <img src="assets/transparent_coin_circle_50px.png" alt="Front-side of the coin">
-                </div>
-                <div class="coin coin_back">
-                    <img src="assets/transparent_coin_circle_50px.png" alt="Back-side of the coin">
-                </div>
-                <div class="coin coin_side">
-                    <img src="assets/coin side.png" alt="The side of the coin">
+            <div class="box_coin coin_container" onmouseenter="wallet_open_coin(event)" onmouseleave="wallet_close_coin(event)" id="coin_container" draggable="true" ondragstart="coin_init(event)" ondragend="coin_position_readjust(event)">
+                <div class="sukonbu_coin"> <!-- This one gets rotated -->
+                    <div class="coin coin_front">
+                        <img src="assets/transparent_coin_circle_50px.png" alt="Front-side of the coin">
+                    </div>
+                    <div class="coin coin_back">
+                        <img src="assets/transparent_coin_circle_50px.png" alt="Back-side of the coin">
+                    </div>
+                    <div class="coin coin_side">
+                        <img src="assets/coin side.png" alt="The side of the coin">
+                    </div>
                 </div>
             </div>
         </div>
@@ -95,36 +97,5 @@
     <script type="module" src="scripts/game.js"></script>
     <script type="module" src="scripts/animations.js"></script>
     <script type="module" src="scripts/main.js"></script>
-    <script type="text/javascript">
-        function start_game(){
-            form_object = document.forms.user_number;
-            if(form_object.elements.username.value == "") {
-                show_error_dialog("Please insert a username to start the game!");
-                return 1;
-            }
-            if(form_object.elements.last_pull_number.value <= 0) {
-                show_error_dialog("Last pull number must be larger than 0!");
-                return 2;
-            }
-            
-            document.getElementById('entry_form').classList.add('form_transition');
-            const carddass = document.getElementById('carddass_machine_wrapper');
-            carddass.classList.remove('opacity_hidden');
-            carddass.classList.add('fade_in_machine_2s');
-        }
-        
-        function show_error_dialog(error_msg){
-            document.getElementById('error_dialog_popup').classList.remove('error_dialog_hidden');
-            document.getElementById('error_dialog_popup').classList.add('error_dialog_show');
-            document.getElementById('error_dialog_text').innerHTML = error_msg;
-        }
-        
-        function hide_error_dialog(){
-            document.getElementById('error_dialog_popup').classList.remove('error_dialog_show');
-            document.getElementById('error_dialog_popup').classList.add('error_dialog_hidden');
-            document.getElementById('error_dialog_text').innerHTML = 
-                ' Sorry, an error occurred! Please notify the administrator for assistance. ';
-        }
-    </script>
   </body>
 </html>

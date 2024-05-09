@@ -119,5 +119,3 @@ async function CA_animation_running() {
   console.log("flip and return");
   document.getElementById("knob_img").classList.remove("knob_turned");
 }
-
-
