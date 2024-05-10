@@ -57,13 +57,13 @@ export function coin_drop(ev){
     var data = ev.dataTransfer.getData("element_class");
     if(ev.target.id !== "drop_target"){
         /* document.getElementById("debug_state_display").innerHTML = "dropped outside target"; */
-        document.getElementById("ev_target_id").innerHTML = ev.target.id;
+        /* document.getElementById("ev_target_id").innerHTML = ev.target.id; */
         return 10;
     }
     else {
         /* document.getElementById("debug_state_display").innerHTML = "coin dropped"; */
         pull_a_card();
-        document.getElementById("ev_target_id").innerHTML = ev.target.id;
+        /* document.getElementById("ev_target_id").innerHTML = ev.target.id; */
         console.log("coin dropped");
         CA_animation_running();
     }
