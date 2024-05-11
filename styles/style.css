@@ -7,15 +7,20 @@ html, body{
 /* Navigation Bar, from https://www.w3schools.com/css/css_navbar.asp */
 /* Add a black background color to the top navigation */
 
-.navbar{
+.navigation_bar{
+    text-align: center;
 }
 
-navbar_horz{
-    width: 100%;
-    align: center;
+.navigation_bar ul{
+    display: inline-block;
+    text-align: left;
 }
 
-ul .navbar_vert{
+.navigation_bar li{
+    min-width: 80px;
+}
+
+.navbar_vert ul{
   list-style-type: none;
   margin: 0;
   padding: 0;
