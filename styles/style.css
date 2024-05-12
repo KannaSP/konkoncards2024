@@ -8,16 +8,26 @@ html, body{
 /* Add a black background color to the top navigation */
 
 .navigation_bar{
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .navigation_bar ul{
-    display: inline-block;
+    display: flex;
     text-align: left;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
 }
 
 .navigation_bar li{
     min-width: 80px;
+}
+
+.navbar_horz {
+    vertical-align: middle;
 }
 
 .navbar_vert ul{
@@ -28,8 +38,8 @@ html, body{
 }
 
 .navbar_link_vert {
-    text-align: center;
     border-bottom: 1px solid #555;
+    text-align: center;
 }
 
 .navbar_link_vert li:last_child {
@@ -52,17 +62,10 @@ html, body{
   color: white;
 }
 
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #000;
-}
-
-li {
+.navbar_link_horz {
     display: inline;
     float: left;
+    border-right: 1px solid #ddd;
     border-right: 1px solid #ddd;
 }
 
@@ -106,4 +109,18 @@ li a:hover{
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
+}
+
+/* For hiding BGM player and SFX players.
+Use pointer-events: none to disable the mouse control completely.
+*/
+
+.hidden_audio_player{
+    z-index: -10;
+    position: absolute;
+    pointer-events: none; 
+}
+
+.navbar_mute{
+    margin-left: 20px;
 }

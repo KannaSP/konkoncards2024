@@ -17,6 +17,9 @@
     <link rel="stylesheet" href="styles/game.css">
   </head>
   <body>
+    <video id="audioplayer" muted autoplay loop class="hidden_audio_player">
+        <source src="assets/Luz Solart - Luna Cantina.mp3" type="audio/mp3">
+    </video>
     <!--general rule:
 	  You have a background image and a text. Preferably, the background image is drawn in css or canvas,
 	  and can rescale with the user's zoom. It needs to be in portrait, like a letter. Landscape will be considered
@@ -27,20 +30,30 @@
 	-->
     <div class="navigation_bar color_option_04">
         <ul class="navbar_horz color_option_04 noto_sans_jp_p">
-          <li class="navbar_link_horz" id="navbar_link_01"><a href="index.html">Home</a></li>
-          <li class="navbar_link_horz" id="navbar_link_02"><a href="game.html">Game</a></li>
-          <li class="navbar_link_horz" id="navbar_link_03"><a href="credits.html">Credits</a></li>
-          <li class="navbar_link_horz" id="navbar_link_04"><a href="album.html">Album</a></li>
+            <li class="navbar_link_horz" id="navbar_link_01"><a href="index.html">Home</a></li>
+            <li class="navbar_link_horz" id="navbar_link_02"><a href="game.html">Game</a></li>
+            <li class="navbar_link_horz" id="navbar_link_03"><a href="credits.html">Credits</a></li>
+            <li class="navbar_link_horz" id="navbar_link_04"><a href="album.html">Album</a></li>
+            <button id="mute_button_navbar" type="button" class="mute_button sound_off navbar_mute" value="mute/unmute" onclick="mute_toggle()"></button>
+            <input id="volume_control_navbar" type="range" min="0" max="100" value="10" oninput="set_volume()">
         </ul>
     </div>
     
-    <form id="entry_form" name="user_number" accept-charset="utf-8" class="form_normal">
-        <label for="username" class="input_system noto_sans_jp_p" >User Name:</label> </br>
-        <input type="text" id="username_input" name="username" class="input_system" > </br>
-        <label for="last_pull_number" class="input_system noto_sans_jp_p" >Last Pull Number:</label> </br>
-        <input type="text" id="last_pull_number_input" name="last_pull_number" class="input_system" ><br>
-        <div onclick="start_game()" class="start_game noto_sans_jp_p"> Start Game! </div>
-    </form>
+    <div id="game_welcome_section" class="game_welcome_section">
+        <div id="graphical-zone" class="graphical-zone">
+            <img src="assets/Title 01.png" id="konkoncards" class="title_text" />
+            <button id="mute_button" type="button" class="mute_button sound_off" value="mute/unmute" onclick="mute_toggle()"></button>
+            <input id="volume_control" type="range" min="0" max="100" value="10" oninput="set_volume_option_controls()">
+        </div>
+        
+        <form id="entry_form" name="user_number" accept-charset="utf-8" class="form_normal">
+            <label for="username" class="input_system noto_sans_jp_p" >User Name:</label> </br>
+            <input type="text" id="username_input" name="username" class="input_system" > </br>
+            <label for="last_pull_number" class="input_system noto_sans_jp_p" >Last Pull Number:</label> </br>
+            <input type="text" id="last_pull_number_input" name="last_pull_number" class="input_system" ><br>
+            <div onclick="start_game()" class="start_game noto_sans_jp_p"> Start Game! </div>
+        </form>
+    </div>
     
     <div id="game_section" class="game_section opacity_hidden">
         <div id="carddass_machine_wrapper" class="carddass_machine_wrapper">
@@ -102,5 +115,41 @@
             from "./scripts/animations.js";
     </script>
     <script type="text/javascript" src="scripts/game_frontpage.js"></script>
+    <script type="text/javascript">
+        const mute_button = document.getElementById('mute_button');
+        const volume_control = document.getElementById('volume_control');
+        const audio_player = document.getElementById('audioplayer');
+        const mute_button_navbar = document.getElementById('mute_button_navbar');
+        const volume_control_navbar = document.getElementById('volume_control_navbar');
+        
+        function mute_toggle(){
+            volume = volume_control_navbar.value;
+            volume_control.value = volume;
+            audio_player.volume = volume / 100;
+            if(audio_player.muted == true) { audio_player.muted = false; } else { audio_player.muted = true; }
+            mute_button.classList.toggle('sound_off');
+            mute_button.classList.toggle('sound_on');
+            mute_button_navbar.classList.toggle('sound_off');
+            mute_button_navbar.classList.toggle('sound_on');
+            volume_control.value = volume;
+        }
+        
+        function set_volume(){
+            volume = volume_control_navbar.value;
+            volume_control.value = volume;
+            if(volume <= 0) {
+                mute_toggle();
+            }
+            else if(mute_button.classList.contains('sound_off')) {
+                mute_toggle();
+            }
+            audio_player.volume = volume / 100;
+        }
+        
+        function set_volume_option_controls(){
+            volume_control_navbar.value = volume_control.value;
+            set_volume();
+        }
+    </script> 
   </body>
 </html>
