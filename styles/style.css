@@ -124,3 +124,26 @@ Use pointer-events: none to disable the mouse control completely.
 .navbar_mute{
     margin-left: 20px;
 }
+
+.mute_button{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-color: transparent;
+    border: none;
+    position: relative;
+    width: 50px;
+    height: 50px;
+}
+
+.sound_off {
+    background-image: url("../assets/button/Music off.png");
+}
+
+.sound_on {
+    background-image: url("../assets/button/Music.png");
+}
+
+.navbar_horz #volume-control{
+    object-fit: cover;
+}

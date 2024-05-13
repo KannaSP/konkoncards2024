@@ -115,41 +115,6 @@
             from "./scripts/animations.js";
     </script>
     <script type="text/javascript" src="scripts/game_frontpage.js"></script>
-    <script type="text/javascript">
-        const mute_button = document.getElementById('mute_button');
-        const volume_control = document.getElementById('volume_control');
-        const audio_player = document.getElementById('audioplayer');
-        const mute_button_navbar = document.getElementById('mute_button_navbar');
-        const volume_control_navbar = document.getElementById('volume_control_navbar');
-        
-        function mute_toggle(){
-            volume = volume_control_navbar.value;
-            volume_control.value = volume;
-            audio_player.volume = volume / 100;
-            if(audio_player.muted == true) { audio_player.muted = false; } else { audio_player.muted = true; }
-            mute_button.classList.toggle('sound_off');
-            mute_button.classList.toggle('sound_on');
-            mute_button_navbar.classList.toggle('sound_off');
-            mute_button_navbar.classList.toggle('sound_on');
-            volume_control.value = volume;
-        }
-        
-        function set_volume(){
-            volume = volume_control_navbar.value;
-            volume_control.value = volume;
-            if(volume <= 0) {
-                mute_toggle();
-            }
-            else if(mute_button.classList.contains('sound_off')) {
-                mute_toggle();
-            }
-            audio_player.volume = volume / 100;
-        }
-        
-        function set_volume_option_controls(){
-            volume_control_navbar.value = volume_control.value;
-            set_volume();
-        }
-    </script> 
+    <script type="text/javascript" src="scripts/audioplayer.js"></script> 
   </body>
 </html>

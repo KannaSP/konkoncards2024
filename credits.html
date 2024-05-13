@@ -17,12 +17,17 @@
     <link rel="stylesheet" href="styles/credits.css">
   </head>
   <body>
+    <video id="audioplayer" muted autoplay loop class="hidden_audio_player">
+        <source src="assets/Luz Solart - Luna Cantina.mp3" type="audio/mp3">
+    </video>
     <div class="navigation_bar color_option_04">
         <ul class="navbar_horz color_option_04 noto_sans_jp_p">
-          <li class="navbar_link_horz" id="navbar_link_01"><a href="index.html">Home</a></li>
-          <li class="navbar_link_horz" id="navbar_link_02"><a href="game.html">Game</a></li>
-          <li class="navbar_link_horz" id="navbar_link_03"><a href="credits.html">Credits</a></li>
-          <li class="navbar_link_horz" id="navbar_link_04"><a href="album.html">Album</a></li>
+            <li class="navbar_link_horz" id="navbar_link_01"><a href="index.html">Home</a></li>
+            <li class="navbar_link_horz" id="navbar_link_02"><a href="game.html">Game</a></li>
+            <li class="navbar_link_horz" id="navbar_link_03"><a href="credits.html">Credits</a></li>
+            <li class="navbar_link_horz" id="navbar_link_04"><a href="album.html">Album</a></li>
+            <button id="mute_button_navbar" type="button" class="mute_button sound_off navbar_mute" value="mute/unmute" onclick="mute_toggle()"></button>
+            <input id="volume_control_navbar" type="range" min="0" max="100" value="10" oninput="set_volume()">
         </ul>
     </div>
     <div id="core_team_section" class="container-div core_team_section_div">
@@ -114,5 +119,6 @@
     <div id="right_container" class="container-div right_div">
     </div> -->
     <!-- https://medium.com/@humbleCoder007/title-mastering-window-scroll-events-in-javascript-416607be8852 -->
+    <script type="text/javascript" src="scripts/audioplayer.js"></script> 
   </body>
 </html>
