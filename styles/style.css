@@ -137,7 +137,7 @@ Use pointer-events: none to disable the mouse control completely.
 }
 
 .sound_off {
-    background-image: url("../assets/button/Music off.png");
+    background-image: url("../assets/button/Music_off.png");
 }
 
 .sound_on {
