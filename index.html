@@ -46,26 +46,6 @@
         </div>
         <img src="assets/Corner rail decoration long.png" id="corner-rail-decor-bottom-right" class="corner-rail-decor bottom-right-corner normal-rail-animation" />
     </div>
-    <script type="text/javascript">
-        const mute_button = document.getElementById('mute_button');
-        const audio_player = document.getElementById('audioplayer');
-        
-        function mute_toggle(){
-            audio_player.volume = document.getElementById('volume-control').value / 100;
-            if(audio_player.muted == true) { audio_player.muted = false; } else { audio_player.muted = true; }
-            mute_button.classList.toggle('sound_off');
-            mute_button.classList.toggle('sound_on');
-        }
-        function set_volume(){
-            value = document.getElementById('volume-control').value;
-            if(value <= 0) {
-                mute_toggle();
-            }
-            else if(mute_button.classList.contains('sound_off')) {
-                mute_toggle();
-            }
-            document.getElementById('audioplayer').volume = value / 100;
-        }
-    </script> 
+    <script type="text/javascript" src="scripts/audioplayer.js"></script>
   </body>
 </html>

@@ -110,9 +110,10 @@ function populate_visible_element(shelf_number) {
         image_element = document.getElementById(element_name);
         if(card_array[starting_element_number + counter - 1] == null) break;
         if(image_element == null) break;
-        image_element.src = card_folder_url_injection + "thumb_" + card_array[starting_element_number + counter - 1].front_art;
+        image_element.src = card_folder_url_injection + "thumb_" + 
+            card_array[starting_element_number + counter - 1].front_art.replace(".png", ".webp");
         counter++;
-        var element_name = template_element_name + (starting_element_number + counter);        
+        var element_name = template_element_name + (starting_element_number + counter);
     }
     current_last_display_number = starting_element_number + counter;
 }
