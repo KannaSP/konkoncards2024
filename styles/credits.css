@@ -54,10 +54,10 @@ body {
 }
 
 .credits01_section_title{
-    position: absolute;
+    position: relative;
     margin: 0;
-    top: 110%;
-    right: 20%;
+    top: 8%;
+    right: -72%;
     max-width: 10%;
     max-height: 10%;
 }
@@ -66,9 +66,9 @@ body {
     display: grid;
     column-gap: 50px;
     grid-template-columns: auto auto auto;
-    position: absolute;
+    position: relative;
     margin: 0;
-    top: 12 %;
+    top: 25%;
     left: 10%;
     width: 80%;
     max-height: 60%;
