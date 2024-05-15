@@ -7,7 +7,14 @@ const volume_control_navbar = document.getElementById('volume_control_navbar');
 function mute_toggle(){
     volume = volume_control_navbar.value;
     audio_player.volume = volume / 100;
-    if(audio_player.muted == true) { audio_player.muted = false; } else { audio_player.muted = true; }
+    if(audio_player.muted == true) { 
+        audio_player.muted = false;
+        if(volume == 0){
+            volume = 0.1; 
+            audio_player.volume = volume; 
+            volume_control_navbar.value = volume * 100;
+        }
+    } else { audio_player.muted = true; }
     mute_button_navbar.classList.toggle('sound_off');
     mute_button_navbar.classList.toggle('sound_on');
     if(volume_control != null && mute_button != null){
@@ -15,7 +22,6 @@ function mute_toggle(){
         mute_button.classList.toggle('sound_off');
         mute_button.classList.toggle('sound_on');
     }
-    
 }
 
 function set_volume(){

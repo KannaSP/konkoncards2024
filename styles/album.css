@@ -1,22 +1,88 @@
 /* For Homepage Styling */
 .container-div {
     width: 100%;
-    height: 100%;
-    background-image: url("../assets/Menu_BG.png");
+    height: calc(100% - 55px);
+    background-image: url("../assets/album/Background_test.png");
     background-repeat: no-repeat;
     background-position: center;
-    overflow: scroll;
     background-size: cover;
+    overflow: hidden;
     position: absolute;
     z-index: 0;
+}
+
+.fullscreen_display_container{
+    top: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: url("../assets/album/Background_test.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    display: flex;
+    z-index: 1;
+}
+
+.opacity_0{
+    opacity: 0;
+}
+
+.hidden_opacity{
+    animation: opacity_hide 1s;
+    animation-fill-mode: forwards;
+}
+
+.reveal_opacity{
+    animation: opacity_reveal 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes opacity_reveal {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes opacity_hide {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.z_m1{
+    z-index: -1;
+}
+
+.z_10{
+    z-index: 10;
+}
+
+.z_100{
+    z-index: 100;
+}
+
+.fullscreen_image{
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: auto;
 }
 
 .grid_style{
 }
 
 .shelf_container{
-    width: 95%;
     height: 100%;
+    margin: auto;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
@@ -29,11 +95,8 @@
 
 .shelf{
     width: fit-content;
-    margin-left: 40px;
-    height: 225px;
+    margin: auto;
     overflow: visible;
-    margin-top: 20px;
-    margin-bottom: 20px;
 }
 
 .card_on_display{
@@ -50,4 +113,24 @@
     background-color: white;
     border: 1px solid black;
     transform: translateX(-5%);
+}
+
+.shelf_rack_bg01{
+    background-image: url("../assets/album/Plank01.png");
+    background-size: 100% 100%;
+}
+
+.shelf_rack_bg02{
+    background-image: url("../assets/album/Plank02.png");
+    background-size: 100% 100%;
+}
+
+.shelf_rack_bg03{
+    background-image: url("../assets/album/Plank03.png");
+    background-size: 100% 100%;
+}
+
+.shelf_rack_bg04{
+    background-image: url("../assets/album/Plank04.png");
+    background-size: 100% 100%;
 }

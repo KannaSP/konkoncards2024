@@ -30,56 +30,61 @@
             <input id="volume_control_navbar" type="range" min="0" max="100" value="10" oninput="set_volume()">
         </ul>
     </div>
-    <div id="container" class="container-div grid_style" onscroll="album_scrolling_event()">
-        <div id="shelf_a_container" class="shelf_container">
-            <div id="shelf_no_1a" class="shelf">
-                <img id="card-collection-1" class="card_on_display" />
-                <img id="card-collection-2" class="card_on_display" />
-                <img id="card-collection-3" class="card_on_display" />
+    <div id="fullscreen_display" class="fullscreen_display_container opacity_0 z_m1" onclick="close_full_size_display()">
+        <img id="fullscreen_image" class="fullscreen_image" onclick="flip_card()">
+        </img>
+    </div>
+    <!-- BE VERY WARY OF OFF BY ONE ERROR!!! THIS ARRAY STARTS FROM 1 !!! -->
+    <div id="container" class="container-div grid_style z_10" onscroll="album_scrolling_event()">
+        <div id="shelf_1" class="shelf_container">
+            <div id="shelf_1a" class="shelf">
+                <img id="card-collection-1" class="card_on_display" data-arrnum="-1" onclick="open_full_size_display()" />
+                <img id="card-collection-2" class="card_on_display" data-arrnum="-1" onclick="open_full_size_display()" />
+                <img id="card-collection-3" class="card_on_display" data-arrnum="-1" onclick="open_full_size_display()" />
                 <br/>
-                <img class="shelf_rack" />
+                <img class="shelf_rack shelf_rack_bg01" />
             </div>
-            <div id="shelf_no_2a" class="shelf">
-                <img id="card-collection-5" class="card_on_display" />
-                <img id="card-collection-6" class="card_on_display" />
-                <img id="card-collection-7" class="card_on_display" />
+            <div id="shelf_1b" class="shelf">
+                <img id="card-collection-4" class="card_on_display" data-arrnum="-1" onclick="open_full_size_display()" />
+                <img id="card-collection-5" class="card_on_display" data-arrnum="-1" onclick="open_full_size_display()" />
+                <img id="card-collection-6" class="card_on_display" data-arrnum="-1" onclick="open_full_size_display()" />
                 <br/>
-                <img class="shelf_rack" />
+                <img class="shelf_rack shelf_rack_bg02" />
             </div>
-            <div id="shelf_no_3a" class="shelf">
-                <img id="card-collection-9" class="card_on_display" />
-                <img id="card-collection-10" class="card_on_display" />
-                <img id="card-collection-11" class="card_on_display" />
+            <div id="shelf_1c" class="shelf">
+                <img id="card-collection-7" class="card_on_display" data-arrnum="-1" onclick="open_full_size_display()" />
+                <img id="card-collection-8" class="card_on_display" data-arrnum="-1" onclick="open_full_size_display()" />
+                <img id="card-collection-9" class="card_on_display" data-arrnum="-1" onclick="open_full_size_display()" />
                 <br/>
-                <img class="shelf_rack" />
+                <img class="shelf_rack shelf_rack_bg03" />
             </div>
-            <div id="shelf_no_4a" class="shelf">
-                <img id="card-collection-13" class="card_on_display" />
-                <img id="card-collection-14" class="card_on_display" />
-                <img id="card-collection-15" class="card_on_display" />
+            <div id="shelf_1d" class="shelf">
+                <img id="card-collection-10" class="card_on_display" data-arrnum="-1" onclick="open_full_size_display()" />
+                <img id="card-collection-11" class="card_on_display" data-arrnum="-1" onclick="open_full_size_display()" />
+                <img id="card-collection-12" class="card_on_display" data-arrnum="-1" onclick="open_full_size_display()" />
                 <br/>
-                <img class="shelf_rack" />
+                <img class="shelf_rack shelf_rack_bg04" />
             </div>
         </div>
-        <div id="shelf_b_container" class="shelf_containerhaki">
+        <div id="shelf_b_container" class="shelf_container">
             <div id="shelf_no_1b" class="shelf">
-                <img id="card-collection-1" class="card_on_display" />
-                <img id="card-collection-2" class="card_on_display" />
-                <img id="card-collection-3" class="card_on_display" />
+                <img id="card-collection-1" class="card_on_display" data-arrnum="-1" />
+                <img id="card-collection-2" class="card_on_display" data-arrnum="-1" />
+                <img id="card-collection-3" class="card_on_display" data-arrnum="-1" />
                 <br/>
                 <img class="shelf_rack" />
             </div>
             <div id="shelf_no_2b" class="shelf">
-                <img id="card-collection-5" class="card_on_display" />
-                <img id="card-collection-6" class="card_on_display" />
-                <img id="card-collection-7" class="card_on_display" />
+                <img id="card-collection-5" class="card_on_display" data-arrnum="-1" />
+                <img id="card-collection-6" class="card_on_display" data-arrnum="-1" />
+                <img id="card-collection-7" class="card_on_display" data-arrnum="-1" />
                 <br/>
                 <img class="shelf_rack" />
             </div>
             <div id="shelf_no_3b" class="shelf">
-                <img id="card-collection-9" class="card_on_display" />
-                <img id="card-collection-10" class="card_on_display" />
-                <img id="card-collection-11" class="card_on_display" />
+                <img id="card-collection-9" class="card_on_display" data-arrnum="-1" />
+                <img id="card-collection-10" class="card_on_display" data-arrnum="-1" />
+                <img id="card-collection-11" class="card_on_display" data-arrnum="-1" />
                 <br/>
                 <img class="shelf_rack" />
             </div>
@@ -93,5 +98,7 @@
         </div>
     </div>
     <script type="text/javascript" src="scripts/audioplayer.js"></script> 
+    <script type="text/javascript" src="scripts/album.js"></script> 
+    <script type="text/javascript" src="scripts/album_interactions.js"></script> 
   </body>
 </html>
