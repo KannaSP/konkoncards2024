@@ -79,6 +79,8 @@ li a{
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    color: white;
+    letter-spacing: 0.5px;
 }
 
 li a:hover{
@@ -101,13 +103,16 @@ li a:hover{
 .color_option_05 {
     background-color: #4B82A2;
 }
+.color_option_06 {
+    background-color: #204852;
+}
 
 
 /* For Google Fonts */
 .noto_sans_jp_p {
   font-family: "Noto Sans JP", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 500;
+  font-weight: 800;
   font-style: normal;
 }
 

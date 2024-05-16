@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML 5 Boilerplate</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+	
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/layers.css">
+  </head>
+  <body>
+    <video id="audioplayer" muted autoplay loop class="hidden_audio_player">
+        <source src="assets/Luz Solart - Luna Cantina.mp3" type="audio/mp3">
+    </video>
+    <!--general rule:
+	  You have a background image and a text. Preferably, the background image is drawn in css or canvas,
+	  and can rescale with the user's zoom. It needs to be in portrait, like a letter. Landscape will be considered
+	  later.
+	  Every message gets a random card background that can flip around to reveal the message.
+	  I'll think about the security and service bombing management later. At least I can prevent bots by using CAPTCHA.
+      Resolved: We're having people upload to the admins and have them add to the database. Be prepared for an onslaught of emails or discord messages, also, always check. Absolutely remind people to check before clicking any links, even if it looks trustable.
+	-->
+    <div class="navigation_bar color_option_06">
+        <ul class="navbar_horz color_option_06 noto_sans_jp_p">
+            <li class="navbar_link_horz" id="navbar_link_01"><a href="index.html">Home</a></li>
+            <li class="navbar_link_horz" id="navbar_link_02"><a href="game.html">Game</a></li>
+            <li class="navbar_link_horz" id="navbar_link_03"><a href="credits.html">Credits</a></li>
+            <li class="navbar_link_horz" id="navbar_link_04"><a href="album.html">Album</a></li>
+            <button id="mute_button_navbar" type="button" class="mute_button sound_off navbar_mute" value="mute/unmute" onclick="mute_toggle()"></button>
+            <input id="volume_control_navbar" type="range" min="0" max="100" value="10" oninput="set_volume()">
+        </ul>
+    </div>
+    <div class="navigation_bar color_option_06">
+        <ul class="navbar_horz color_option_06 noto_sans_jp_p">
+            <li class="navbar_link_horz" id="navbar_link_01"><a href="index.html">Home</a></li>
+            <li class="navbar_link_horz" id="navbar_link_02"><a href="game.html">Game</a></li>
+            <li class="navbar_link_horz" id="navbar_link_03"><a href="credits.html">Credits</a></li>
+            <li class="navbar_link_horz" id="navbar_link_04"><a href="album.html">Album</a></li>
+            <button id="mute_button_navbar" type="button" class="mute_button sound_off navbar_mute" value="mute/unmute" onclick="mute_toggle()"></button>
+            <input id="volume_control_navbar" type="range" min="0" max="100" value="10" oninput="set_volume()">
+        </ul>
+    </div>
+    <div class="navigation_bar color_option_06">
+        <ul class="navbar_horz color_option_06 noto_sans_jp_p">
+            <li class="navbar_link_horz" id="navbar_link_01"><a href="index.html">Home</a></li>
+            <li class="navbar_link_horz" id="navbar_link_02"><a href="game.html">Game</a></li>
+            <li class="navbar_link_horz" id="navbar_link_03"><a href="credits.html">Credits</a></li>
+            <li class="navbar_link_horz" id="navbar_link_04"><a href="album.html">Album</a></li>
+            <button id="mute_button_navbar" type="button" class="mute_button sound_off navbar_mute" value="mute/unmute" onclick="mute_toggle()"></button>
+            <input id="volume_control_navbar" type="range" min="0" max="100" value="10" oninput="set_volume()">
+        </ul>
+    </div>
+    <div class="navigation_bar color_option_06">
+        <ul class="navbar_horz color_option_06 noto_sans_jp_p">
+            <li class="navbar_link_horz" id="navbar_link_01"><a href="index.html">Home</a></li>
+            <li class="navbar_link_horz" id="navbar_link_02"><a href="game.html">Game</a></li>
+            <li class="navbar_link_horz" id="navbar_link_03"><a href="credits.html">Credits</a></li>
+            <li class="navbar_link_horz" id="navbar_link_04"><a href="album.html">Album</a></li>
+            <button id="mute_button_navbar" type="button" class="mute_button sound_off navbar_mute" value="mute/unmute" onclick="mute_toggle()"></button>
+            <input id="volume_control_navbar" type="range" min="0" max="100" value="10" oninput="set_volume()">
+        </ul>
+    </div>
+  </body>
+</html>
