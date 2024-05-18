@@ -11,6 +11,8 @@ const template_element_name = "card-collection-";
 const cards_per_shelf = 12;
 var flip_card_triggered = false;
 
+/* Pagination Logic */
+
 function switch_down_page(){
     
 }
@@ -19,8 +21,15 @@ function switch_up_page(){
     
 }
 
+/* Single Card Display and Operation Logic */
+
 var current_card_face = "front";
 var next_card_face = "back";
+var OLD_hack_toggle_for_rotate = false;
+var flag_card_portrait_landscape_toggle = false;
+var flag_hidden_controls = false;
+
+var current_card_number = 0;
 
 function open_full_size_display() {
     if ( flip_card_triggered == true ) {
@@ -38,6 +47,7 @@ function open_full_size_display() {
         var fullscreen_image = document.getElementById("fullscreen_image");
         fullscreen_image.src = card_folder_url_injection + card_array[card_array_number].front_art;
         fullscreen_image.style.zIndex = 200;
+        current_card_number = card_array_number;
         
         current_card_face = fullscreen_image.src;
         next_card_face = card_folder_url_injection + card_array[card_array_number].back_art;
@@ -45,6 +55,14 @@ function open_full_size_display() {
 }
 
 function close_full_size_display() {
+    if(flag_hidden_controls == true){
+        flag_hidden_controls = false;
+        control_bar = document.getElementById("controls_bar");
+        control_bar.classList.remove("z_10");
+        control_bar.classList.remove("hidden_opacity");
+        return;
+    }
+    
     /* hide the display div */
     var fullscreen_display = document.getElementById("fullscreen_display");
     fullscreen_display.classList.remove("reveal_opacity");
@@ -54,6 +72,9 @@ function close_full_size_display() {
     var fullscreen_image = document.getElementById("fullscreen_image");
     fullscreen_image.src = "";
     fullscreen_image.style.zIndex = -2;
+    fullscreen_image.classList.remove("rotate_90ccw_animation");
+    fullscreen_image.classList.remove("rotate_return_animation");
+    flag_card_portrait_landscape_toggle = false;
 }
 
 function flip_card(){
@@ -63,6 +84,48 @@ function flip_card(){
     temp_card_face = current_card_face;
     current_card_face = next_card_face;
     next_card_face = temp_card_face;
+}
+
+function rotate_card_div(){
+    event.stopPropagation();
+    var fullscreen_image = document.getElementById("fullscreen_image");
+    if(flag_card_portrait_landscape_toggle == false){
+        fullscreen_image.classList.toggle("rotate_90ccw_animation");
+        flag_card_portrait_landscape_toggle = true;
+    }
+    else {
+        fullscreen_image.classList.toggle("rotate_90ccw_animation");
+        fullscreen_image.classList.toggle("rotate_return_animation");
+    }
+}
+
+function load_next_card_div(){
+    event.stopPropagation();
+    var fullscreen_image = document.getElementById("fullscreen_image");
+    if(++current_card_number > card_array.length - 1) current_card_number = card_array.length - 1;
+    fullscreen_image.src = card_folder_url_injection + card_array[current_card_number].front_art;
+}
+
+function load_prev_card_div(){
+    event.stopPropagation();
+    var fullscreen_image = document.getElementById("fullscreen_image");
+    if(--current_card_number < 0) current_card_number = 0;
+    fullscreen_image.src = card_folder_url_injection + card_array[current_card_number].front_art;
+}
+
+function hide_controls_z_dive(){
+    event.stopPropagation();
+    var control_bar = document.getElementById("controls_bar");
+    control_bar.classList.add("z_10");
+    control_bar.classList.add("hidden_opacity");
+    flag_hidden_controls = true;
+}
+
+function show_controls_z_float(){
+    event.stopPropagation();
+    document.getElementById("controls_bar").classList.remove("z_10");
+    document.getElementById("controls_bar").classList.remove("hidden_opacity");
+    flag_hidden_controls = false;
 }
 
 /* Testing section before separating into module */

@@ -33,6 +33,12 @@
     <div id="fullscreen_display" class="fullscreen_display_container opacity_0 z_m1" onclick="close_full_size_display()">
         <img id="fullscreen_image" class="fullscreen_image" onclick="flip_card()">
         </img>
+        <div id="controls_bar" class="controls_bar_container">
+            <button id="rotate_card" class="album_controls rotate_card" onclick="rotate_card_div()">Rotate Card</button>
+            <button id="previous_card" class="album_controls previous_card" onclick="load_prev_card_div()">Previous Card</button>
+            <button id="next_card" class="album_controls next_card" onclick="load_next_card_div()">Next Card</button>
+            <button id="hide_controls" class="album_controls hide_controls" onclick="hide_controls_z_dive()">Hide Controls</button>
+        </div>
     </div>
     <!-- BE VERY WARY OF OFF BY ONE ERROR!!! THIS ARRAY STARTS FROM 1 !!! -->
     <div id="container" class="container-div grid_style z_10" onscroll="album_scrolling_event()">
