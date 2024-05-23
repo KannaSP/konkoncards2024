@@ -1,4 +1,5 @@
 function start_game(){
+    /* This function is temporarily unused */
     form_object = document.forms.user_number;
     if(form_object.elements.username.value == "") {
         show_error_dialog("Please insert a username to start the game!");
