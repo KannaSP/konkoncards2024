@@ -285,7 +285,7 @@ function populate_visible_element(shelf_number) {
         /* Adding 1 because to prevent off by one error. You can guess what happened in the album.html */
         image_element = document.getElementById(element_name);
         if(card_array[starting_data_number + counter] == null){
-            image_url = "play card.webp";
+            image_url = "Play card.webp";
             image_element.dataset.arrnum = -10;
         }
         else{
