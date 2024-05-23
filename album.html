@@ -30,6 +30,9 @@
             <input id="volume_control_navbar" type="range" min="0" max="100" value="10" oninput="set_volume()">
         </ul>
     </div>
+    <div id="transition_screen" class="transition_screen trscreen_inactive">
+        <img id="transition_letter_image" src="assets/LETTER.png" class="transition_letter_image" alt="Love Letter for Fubuki"></img>
+    </div>
     <div id="fullscreen_display" class="fullscreen_display_container opacity_0 z_m1" onclick="close_full_size_display()">
         <img id="fullscreen_image" class="fullscreen_image" onclick="flip_card()">
         </img>
@@ -42,6 +45,9 @@
     </div>
     <!-- BE VERY WARY OF OFF BY ONE ERROR!!! THIS ARRAY STARTS FROM 1 !!! -->
     <div id="container" class="container-div grid_style z_10" onscroll="album_scrolling_event()">
+        <div id="previous_page_controls" class="previous_page_controls z_20" onclick="prev_page()">
+            <img src="assets/trianglesmall.svg" class="previous_page_control_button" alt="next_page"/>
+        </div>
         <div id="shelf_1" class="shelf_container">
             <div id="shelf_1a" class="shelf">
                 <img id="card-collection-1" class="card_on_display" data-arrnum="-1" onclick="open_full_size_display()" />
@@ -72,35 +78,8 @@
                 <img class="shelf_rack shelf_rack_bg04" />
             </div>
         </div>
-        <div id="shelf_b_container" class="shelf_container">
-            <div id="shelf_no_1b" class="shelf">
-                <img id="card-collection-1" class="card_on_display" data-arrnum="-1" />
-                <img id="card-collection-2" class="card_on_display" data-arrnum="-1" />
-                <img id="card-collection-3" class="card_on_display" data-arrnum="-1" />
-                <br/>
-                <img class="shelf_rack" />
-            </div>
-            <div id="shelf_no_2b" class="shelf">
-                <img id="card-collection-5" class="card_on_display" data-arrnum="-1" />
-                <img id="card-collection-6" class="card_on_display" data-arrnum="-1" />
-                <img id="card-collection-7" class="card_on_display" data-arrnum="-1" />
-                <br/>
-                <img class="shelf_rack" />
-            </div>
-            <div id="shelf_no_3b" class="shelf">
-                <img id="card-collection-9" class="card_on_display" data-arrnum="-1" />
-                <img id="card-collection-10" class="card_on_display" data-arrnum="-1" />
-                <img id="card-collection-11" class="card_on_display" data-arrnum="-1" />
-                <br/>
-                <img class="shelf_rack" />
-            </div>
-            <div id="shelf_no_4b" class="shelf">
-                <img id="card-collection-13" class="card_on_display" />
-                <img id="card-collection-14" class="card_on_display" />
-                <img id="card-collection-15" class="card_on_display" />
-                <br/>
-                <img class="shelf_rack" />
-            </div>
+        <div id="next_page_controls" class="next_page_controls z_20" onclick="next_page()">
+            <img src="assets/trianglesmall.svg" class="next_page_control_button" alt="next_page"/>
         </div>
     </div>
     <script type="text/javascript" src="scripts/audioplayer.js"></script> 

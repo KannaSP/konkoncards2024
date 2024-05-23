@@ -6,9 +6,10 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    overflow: hidden;
+    overflow: scroll;
     position: absolute;
     z-index: 0;
+    display: flex;
 }
 
 .fullscreen_display_container{
@@ -30,16 +31,6 @@
     opacity: 0;
 }
 
-.hidden_opacity{
-    animation: opacity_hide 1s;
-    animation-fill-mode: forwards;
-}
-
-.reveal_opacity{
-    animation: opacity_reveal 1s;
-    animation-fill-mode: forwards;
-}
-
 @keyframes opacity_reveal {
     from {
         opacity: 0;
@@ -58,12 +49,26 @@
     }
 }
 
+.hidden_opacity{
+    animation: opacity_hide 1s;
+    animation-fill-mode: forwards;
+}
+
+.reveal_opacity{
+    animation: opacity_reveal 1s;
+    animation-fill-mode: forwards;
+}
+
 .z_m1{
     z-index: -1;
 }
 
 .z_10{
     z-index: 10;
+}
+
+.z_20{
+    z-index: 20;
 }
 
 .z_100{
@@ -92,6 +97,8 @@
     justify-content: space-evenly;
     align-items: center;
 }
+
+/* Album controls and pagination animation. */
 
 .album_controls{
     height: 48px;
@@ -151,14 +158,114 @@
     }
 }
 
-.grid_style{
+/* Pagination Animation Experiementation Section */
+.transition_screen{
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.shelf_container{
+.previous_page_controls{
+    margin: 0px;
+    padding: 0px;
+    top: 0px;
+    left: 0px;
     height: 100%;
-    margin: auto;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.next_page_controls{
+    margin: 0px;
+    padding: 0px;
+    top: 0px;
+    right: 0px;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.previous_page_controls:hover{
+    background-color: rgba(74, 60, 37, 0.35);
+}
+
+.next_page_controls:hover{
+    background-color: rgba(74, 60, 37, 0.35);
+}
+
+.next_page_control_button{
+    transform: rotate(90deg); 
+    width: 50px; 
+    height: 50px;
+}
+
+.previous_page_control_button{
+    transform: rotate(-90deg); 
+    width: 50px; 
+    height: 50px;
+}
+
+.trscreen_inactive{
+    opacity: 0;
+    z-index: -10;
+}
+
+.trscreen_active{
+    opacity: 1;
+    z-index: 100;
+}
+
+.transition_letter_image{
+    width: 20%;
+}
+
+@keyframes sld_in_bot {
+	from {
+		opacity: 0;
+        transform: translateY(100%);
+	}
+	to {
+		opacity: 1;
+        transform: translateY(0%);
+	}
+}
+
+@keyframes scale_up_center {
+	from {
+		transform: scale(1);
+	}
+
+	to {
+		transform: scale(50);
+	}
+}
+
+.animation_01_start01 {
+    animation: sld_in_bot 1s ease 0s 1 normal forwards;
+    
+}
+
+.animation_01_end02 {
+    animation: scale_up_center 1s ease 0.5s 1 normal forwards;
+}
+
+
+/* Shelf Styling and Misc. */
+
+.shelf_container{
+    flex-grow: 8;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 0.5fr);
 }
 
 .hide_shelf{

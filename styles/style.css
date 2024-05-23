@@ -108,7 +108,7 @@ li a:hover{
 }
 
 
-/* For Google Fonts */
+/* For Google Fonts and hiding / showing texts */
 
 @font-face {
   font-family: noto-sans-fallback;
@@ -160,7 +160,6 @@ li a:hover{
   font-weight: 400;
   font-style: normal;
 }
-
 
 /* For hiding BGM player and SFX players.
 Use pointer-events: none to disable the mouse control completely.
