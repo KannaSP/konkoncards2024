@@ -114,7 +114,9 @@ body{
 .transition_video_container {
     position: absolute;
     width: 100%;
-    height: 700px; 
+    height: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 @keyframes opacity_reveal_enlarge_video_container {
@@ -176,8 +178,8 @@ body{
 }
 
 .box_coin_insert{
-    grid-column: 10 / 11;
-    grid-row: 8 / 9;
+    grid-column: 9 / 12;
+    grid-row: 7 / 9;
 }
 
 .box_knob{
