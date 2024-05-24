@@ -62,10 +62,11 @@ export function coin_drop(ev){
     }
     else {
         /* document.getElementById("debug_state_display").innerHTML = "coin dropped"; */
-        pull_a_card();
-        /* document.getElementById("ev_target_id").innerHTML = ev.target.id; */
         console.log("coin dropped");
-        CA_animation_running();
+        pull_a_card();
+        console.log("card pulled and set, entering animation");
+        /* document.getElementById("ev_target_id").innerHTML = ev.target.id; */
+        reveal_and_start_transition_video();
     }
 }
 
@@ -104,20 +105,47 @@ function CA_animate(elem, animation, remove_animation = null) {
 }
 
 
-/* Knob and Card Animation Functions */
+/* Knob Turning, Transition, and Card Animation Functions */
 
 async function CA_animation_running() {
-  const KNOB = document.getElementById("knob_img");
-  await CA_transition(KNOB, "knob_turned");
-  
-  const LETTER = document.querySelector(".LETTER");
-  
-  // first fadeout text
-  await CA_animate(LETTER, "move_down");
-  console.log("moving down");
-  await CA_animate(LETTER, "flip_and_return", "move_down");
-  console.log("flip and return");
-  document.getElementById("knob_img").classList.remove("knob_turned");
+    pulled_card_full_display = document.getElementById("pulled_card_full_display");
+    await CA_animate(pulled_card_full_display, "reveal_display_card");
+}
+
+function reveal_and_start_transition_video() {
+    transition_video_container = document.getElementById("transition_video_container");
+    transition_video_container.classList.remove("z_m1");
+    transition_video_container.classList.remove("opacity_0");
+    transition_video_container.classList.add("z_100");
+    transition_video_container.classList.add("opacity_1");
+    transition_video_content = document.getElementById("transition_video_content");
+    transition_video_content.play();
+}
+
+function reveal_card_pull_display() {
+    transition_video_container = document.getElementById("transition_video_container");
+    transition_video_container.classList.remove("z_100");
+    transition_video_container.classList.remove("opacity_1");
+    transition_video_container.classList.add("z_m1");
+    transition_video_container.classList.add("opacity_0");
+    pulled_card_full_display = document.getElementById("pulled_card_full_display");
+    transition_video_container.classList.add("reveal_opacity");    
+}
+
+async function old_20240524_CA_animation_running() {
+    const KNOB = document.getElementById("knob_img");
+    await CA_transition(KNOB, "knob_turned");
+
+    const LETTER = document.querySelector(".LETTER");
+
+    // first fadeout text
+    await CA_animate(LETTER, "move_down");
+    console.log("moving down");
+    await CA_animate(LETTER, "flip_and_return", "move_down");
+    console.log("flip and return");
+    /* You have to realize that this line below have no guarantee it'll run 
+        AFTER an AWAIT CA_transition(KNOB, "knob_turned"); function */
+    document.getElementById("knob_img").classList.remove("knob_turned");
 }
 
 /* Importing Statements */
@@ -133,3 +161,4 @@ window.coin_hovering = coin_hovering;
 window.coin_drop = coin_drop;
 window.coin_position_readjust = coin_position_readjust;
 window.coin_leaves_target = coin_leaves_target;
+window.reveal_card_pull_display = reveal_card_pull_display;

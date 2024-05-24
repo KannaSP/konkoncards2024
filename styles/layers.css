@@ -46,7 +46,7 @@
     
     .LETTER_content{
     
-        z-index: 0;
+        z-index: 10;
         position: absolute;
         width: 100%;
         height: 100%;
@@ -59,13 +59,13 @@
         
         /* Card Layer, Frontside. */
         &.layer_5_card_front{
-            z-index: 0;
+            z-index: 10;
             background-color: dodgerblue;
         }
         
         /* Card Layer, Backside. */
         &.layer_5_card_back{
-            z-index: 0;
+            z-index: 10;
             background-color: purple;
             transform: rotateX(180deg);
         }
@@ -80,13 +80,51 @@
 
 }
 
-.LETTER_container:hover .LETTER{
+.LETTER:hover{
     transform: rotateX(180deg); /* Rotate along the Y-axis (vertical) */
 }
 
-.layer_3_card_disp{
+/* Card Display */
+
+#pulled_card_full_display{
+    position: absolute;
+    left: 10%;
+    top: 5%;
+    width: 80%;
+    height: 80%;
     margin: auto;
     text-align: center;
+    background-color: red;
+}
+
+#card_back_button{
+    position: absolute;
+    left: 75%;
+    top: 5%;
+    background-image: url("../assets/button/back.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+}
+
+#card_main_display {
+    position: absolute;
+    left: 30%;
+    top: 5%;
+    width: 40%;
+    height: 75%;
+}
+
+#cardcaptor_caption {
+    position: absolute;
+    left: calc(5% - 12px);
+    top: 80%;
+    width: 90%;
+    height: 10%;
+    border: solid grey 12px;
+    border-radius: 5px;
 }
 
 /* Animation chain, credits to : https://ccscoder.medium.com/chaining-css-animations-using-javascript-1b171708360e */
@@ -126,14 +164,6 @@
 
 
 @media (orientation: landscape) {
-    
-    /* Card Dispenser Layer. Landscape position not decided yet, 
-    but probably around 1/3 left, vertical-align middle*/
-    .layer_3_card_disp{
-        z-index: 3;
-        vertical-align: middle;
-        background-color: red;
-    }
 
     /* If landscape, album opens up like a butterfly / two-side binder */
     .layer_album{
@@ -150,7 +180,7 @@
     
     /* Card Dispenser Layer. Portrait one must be top center, 
     around 2/3 of the screen with minimal of 50 px from the edge.*/
-    .layer_3_card_disp{
+    .pulled_card_full_display{
         z-index: 0;
         margin: auto;       /* TODO: NEED TESTING */
     }
@@ -325,14 +355,6 @@ I want it skippable, so I might implement a skip button with another magical tra
 
 
 @media (orientation: landscape) {
-    
-    /* Card Dispenser Layer. Landscape position not decided yet, 
-    but probably around 1/3 left, vertical-align middle*/
-    .layer_3_card_disp{
-        z-index: 3;
-        vertical-align: middle;
-        background-color: red;
-    }
 
     /* If landscape, album opens up like a butterfly / two-side binder */
     .layer_album{
@@ -349,7 +371,7 @@ I want it skippable, so I might implement a skip button with another magical tra
     
     /* Card Dispenser Layer. Portrait one must be top center, 
     around 2/3 of the screen with minimal of 50 px from the edge.*/
-    .layer_3_card_disp{
+    .pulled_card_full_display{
         z-index: 0;
         margin: auto;       /* TODO: NEED TESTING */
     }

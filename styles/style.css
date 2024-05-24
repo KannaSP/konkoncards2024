@@ -11,6 +11,7 @@ html, body{
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 75px;
 }
 
 .navigation_bar ul{
@@ -172,7 +173,7 @@ Use pointer-events: none to disable the mouse control completely.
 }
 
 .navbar_mute{
-    margin-left: 20px;
+    
 }
 
 .mute_button{
@@ -196,4 +197,65 @@ Use pointer-events: none to disable the mouse control completely.
 
 .navbar_horz #volume-control{
     object-fit: cover;
+}
+
+/* Various Hiding Methods */
+
+.opacity_0{
+    opacity: 0;
+}
+.opacity_1{
+    opacity: 0;
+}
+
+@keyframes opacity_reveal {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes opacity_hide {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.hidden_opacity{
+    animation: opacity_hide 1s;
+    animation-fill-mode: forwards;
+}
+
+.reveal_opacity{
+    animation: opacity_reveal 1s;
+    animation-fill-mode: forwards;
+}
+
+.z_m1{
+    z-index: -1;
+}
+
+.z_1{
+    z-index: 1;
+}
+
+.z_10{
+    z-index: 10;
+}
+
+.z_20{
+    z-index: 20;
+}
+
+.z_100{
+    z-index: 100;
+}
+
+.z_1000{
+    z-index: 1000;
 }

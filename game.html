@@ -28,7 +28,7 @@
 	  I'll think about the security and service bombing management later. At least I can prevent bots by using CAPTCHA.
       Resolved: We're having people upload to the admins and have them add to the database. Be prepared for an onslaught of emails or discord messages, also, always check. Absolutely remind people to check before clicking any links, even if it looks trustable.
 	-->
-    <div class="navigation_bar color_option_06">
+    <div class="navigation_bar color_option_06 z_100">
         <ul class="navbar_horz color_option_06 mochiy-pop-one-regular-JP-only-impact">
             <li class="navbar_link_horz" id="navbar_link_01"><a href="index.html">Home</a></li>
             <li class="navbar_link_horz" id="navbar_link_02"><a href="game.html">Game</a></li>
@@ -55,34 +55,41 @@
         </form>
     </div> -->
     
-    <div id="game_section" class="game_section">
-        <div id="carddass_machine_wrapper" class="carddass_machine_wrapper">
-            <div class="box_card_output">
-                <div class="interaction_container">
-                    <span class="layer_3_card_disp">
-                        <img src="assets/carddispenser.jpg" alt="Card Dispenser">
-                    </span>
-                    <div class="LETTER_container TEST_CONTAINER">
-                        <div class="LETTER TEST_LETTER" >
-                            <div class="LETTER_content layer_5_card_front">
-                                <img id="card_backside" src="no_illustration.jpg" />
-                            </div>
-                            <div class="LETTER_content layer_5_card_back">
-                                <img id="card_content_frontside" src="card_images\kumarang_-1753780069288546428-01.jpg" />
-                            </div>
-                        </div>
-                    </div>
+    <div id="game_section" class="game_section z_1">
+        <div id="transition_video_container" class="z_m1 opacity_0 transition_video_container">
+            <video id="transition_video_content" src="assets/machine_assets/machine_animation.mp4" 
+                type="video/mp4" class="transition_video_content" 
+                ended="reveal_card_pull_display()" muted="true" loop="false" disablepictureinpicture
+                >
+            </video>
+        </div>
+        <div id="pulled_card_full_display" class="z_m1 opacity_0">
+            <button id="card_back_button" type="button" onclick="card_back_button()"></button>
+            <div id="card_main_display" class="LETTER">
+                <div class="LETTER_content layer_5_card_front">
+                    <img id="LETTER_content_front" src="no_illustration.jpg" />
                 </div>
-            </div>        
-            <div class="box_coin_insert coin_hole">
-                <img class="drop_target" src="assets/coin_hole.png" alt="Back-side of the coin" id="drop_target" ondragenter="coin_enters_target(event)" ondragover="coin_hovering(event)" ondrop="coin_drop(event)" ondragleave="coin_leaves_target(event)">
+                <div class="LETTER_content layer_5_card_back">
+                    <img id="LETTER_content_back" src="no_illustration.jpg" />
+                </div>
+            </div>
+            <p id="cardcaptor_caption" class="noto_sans_jp_p">No text inside</p>
+        </div>
+        <div id="carddass_machine_wrapper" class="carddass_machine_wrapper">
+            <div class="box_coin_insert coin_hole" id="drop_target" ondragenter="coin_enters_target(event)" 
+                ondragover="coin_hovering(event)" ondrop="coin_drop(event)" 
+                ondragleave="coin_leaves_target(event)">
+                <!-- <img class="drop_target" src="assets/coin_hole.png" alt="Back-side of the coin"> -->
             </div>
             
-            <img class="box_knob" id="knob_img" src="assets/knob.jpg" alt="knob" />
+            <!-- <img class="box_knob" id="knob_img" src="assets/knob.jpg" alt="knob" /> -->
             
-            <img class="box_wallet" id="wallet_img" src="assets/Wallet_Asset_closed.png" onmouseenter="wallet_open(event)" onmouseleave="wallet_close(event)" />
+            <img class="box_wallet" id="wallet_img" src="assets/Wallet_Asset_closed.png" 
+                onmouseenter="wallet_open(event)" onmouseleave="wallet_close(event)" />
 
-            <div class="box_coin coin_container" onmouseenter="wallet_open_coin(event)" onmouseleave="wallet_close_coin(event)" id="coin_container" draggable="true" ondragstart="coin_init(event)" ondragend="coin_position_readjust(event)">
+            <div class="box_coin coin_container" onmouseenter="wallet_open_coin(event)" 
+                onmouseleave="wallet_close_coin(event)" id="coin_container" draggable="true" 
+                ondragstart="coin_init(event)" ondragend="coin_position_readjust(event)">
                 <div class="sukonbu_coin"> <!-- This one gets rotated -->
                     <div class="coin coin_front">
                         <img src="assets/transparent_coin_circle_50px.png" alt="Front-side of the coin">
@@ -108,11 +115,11 @@
     Target Div ID: <p id="ev_target_id"></p>
     <input type="button" id="reset_button" name="start_game" value="Reset" onclick="reset_start_button()"> -->
     <script type="module" src="scripts/game.js"></script>
-    <script type="module" src="scripts/animations.js"></script>
+    <script type="module" src="scripts/game_interactions.js"></script>
     <script type="module">
         import { wallet_open, wallet_close, wallet_open_coin, wallet_close_coin, 
             coin_init, coin_enters_target, coin_hovering, coin_drop, coin_position_readjust, coin_leaves_target } 
-            from "../scripts/animations.js";
+            from "../scripts/game_interactions.js";
     </script>
     <script type="text/javascript" src="scripts/game_frontpage.js"></script>
     <script type="text/javascript" src="scripts/audioplayer.js"></script> 
