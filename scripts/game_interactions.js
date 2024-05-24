@@ -111,16 +111,14 @@ function reveal_and_start_transition_video() {
     var transition_video_container = document.getElementById("transition_video_container");
     transition_video_container.classList.remove("z_m1");
     transition_video_container.classList.remove("opacity_0");
-    transition_video_container.classList.add("z_100");
-    transition_video_container.classList.add("opacity_1");
+    transition_video_container.classList.add("reveal_opacity_video_container");
     var transition_video_content = document.getElementById("transition_video_content");
     transition_video_content.play();
 }
 
 function reveal_card_pull_display() {
     var transition_video_container = document.getElementById("transition_video_container");
-    transition_video_container.classList.remove("z_100");
-    transition_video_container.classList.remove("opacity_1");
+    transition_video_container.classList.remove("reveal_opacity_video_container");
     transition_video_container.classList.add("z_m1");
     transition_video_container.classList.add("opacity_0");
     var pulled_card_full_display = document.getElementById("pulled_card_full_display");
