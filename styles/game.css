@@ -187,15 +187,16 @@ body{
 }
 
 .box_wallet{
-    width: 200px;
-    height: 200px;
     grid-column: 12 / 14;
     grid-row: 8 / 10;
+    width: 200px;
+    height: 200px;
 }
 
 .box_coin{
     grid-column: 12 / 14;
-    grid-row:  7 / 8;
+    grid-row: 8 / 10;
+    margin-left: 40px;
     opacity: 0;
 }
 
