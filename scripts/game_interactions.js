@@ -123,7 +123,7 @@ function reveal_card_pull_display() {
     transition_video_container.classList.add("z_m1");
     transition_video_container.classList.add("opacity_0");
     var pulled_card_full_display = document.getElementById("pulled_card_full_display");
-    pulled_card_full_display.classList.add("reveal_opacity");    
+    pulled_card_full_display.classList.add("reveal_opacity");
 }
 
 async function old_20240524_CA_animation_running() {
