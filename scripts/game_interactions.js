@@ -117,12 +117,13 @@ function reveal_and_start_transition_video() {
 }
 
 function reveal_card_pull_display() {
+    console.log("video ended, revealing card display");
     var transition_video_container = document.getElementById("transition_video_container");
     transition_video_container.classList.remove("reveal_opacity_video_container");
     transition_video_container.classList.add("z_m1");
     transition_video_container.classList.add("opacity_0");
     var pulled_card_full_display = document.getElementById("pulled_card_full_display");
-    transition_video_container.classList.add("reveal_opacity");    
+    pulled_card_full_display.classList.add("reveal_opacity");    
 }
 
 async function old_20240524_CA_animation_running() {
