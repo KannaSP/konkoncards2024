@@ -107,11 +107,6 @@ function CA_animate(elem, animation, remove_animation = null) {
 
 /* Knob Turning, Transition, and Card Animation Functions */
 
-async function CA_animation_running() {
-    pulled_card_full_display = document.getElementById("pulled_card_full_display");
-    await CA_animate(pulled_card_full_display, "reveal_display_card");
-}
-
 function reveal_and_start_transition_video() {
     var transition_video_container = document.getElementById("transition_video_container");
     transition_video_container.classList.remove("z_m1");
