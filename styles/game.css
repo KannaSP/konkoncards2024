@@ -161,8 +161,9 @@ body{
     display: none;
 }
 
-.object_fit_contain {
-    object-fit: contain;
+.image_contain {
+    max-width: 100%;
+    height: auto;
 }
 
 .fade_in_machine_2s {
