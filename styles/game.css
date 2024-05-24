@@ -161,6 +161,10 @@ body{
     display: none;
 }
 
+.object_fit_contain {
+    object-fit: contain;
+}
+
 .fade_in_machine_2s {
     animation: fade_in 3s;
     animation-fill-mode: forwards;

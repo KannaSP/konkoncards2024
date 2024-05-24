@@ -123,7 +123,18 @@ function reveal_card_pull_display() {
     transition_video_container.classList.add("z_m1");
     transition_video_container.classList.add("opacity_0");
     var pulled_card_full_display = document.getElementById("pulled_card_full_display");
+    pulled_card_full_display.classList.remove("z_m1");
+    pulled_card_full_display.classList.remove("opacity_0");
+    pulled_card_full_display.classList.add("z_100");
     pulled_card_full_display.classList.add("reveal_opacity");
+}
+
+function card_back_button() {
+    var pulled_card_full_display = document.getElementById("pulled_card_full_display");
+    pulled_card_full_display.classList.add("z_m1");
+    pulled_card_full_display.classList.add("opacity_0");
+    pulled_card_full_display.classList.remove("z_100");
+    pulled_card_full_display.classList.remove("reveal_opacity");
 }
 
 async function old_20240524_CA_animation_running() {
@@ -156,3 +167,4 @@ window.coin_drop = coin_drop;
 window.coin_position_readjust = coin_position_readjust;
 window.coin_leaves_target = coin_leaves_target;
 window.reveal_card_pull_display = reveal_card_pull_display;
+window.card_back_button = card_back_button;

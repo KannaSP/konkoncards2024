@@ -56,7 +56,7 @@
     </div> -->
     
     <div id="game_section" class="game_section z_1">
-        <div id="transition_video_container" class="z_m1  transition_video_container">
+        <div id="transition_video_container" class="z_m1 opacity_0 transition_video_container">
             <video id="transition_video_content" src="assets/machine_assets/machine_animation.mp4" 
                 type="video/mp4" class="transition_video_content" 
                 onended="reveal_card_pull_display()" muted disablepictureinpicture
@@ -67,10 +67,10 @@
             <button id="card_back_button" type="button" onclick="card_back_button()"></button>
             <div id="card_main_display" class="LETTER">
                 <div class="LETTER_content layer_5_card_front">
-                    <img id="LETTER_content_front" src="no_illustration.jpg" />
+                    <img id="LETTER_content_front" class="object_fit_contain" src="no_illustration.jpg" />
                 </div>
                 <div class="LETTER_content layer_5_card_back">
-                    <img id="LETTER_content_back" src="no_illustration.jpg" />
+                    <img id="LETTER_content_back" class="object_fit_contain" src="no_illustration.jpg" />
                 </div>
             </div>
             <p id="cardcaptor_caption" class="noto_sans_jp_p">No text inside</p>
