@@ -288,7 +288,7 @@ body{
     transform: translate(-50%, -50%);
     min-height: 350px;
     min-width: 350px;
-    background-image: url("../assets/error box.png");
+    background-image: url("../assets/error_box.png");
     background-size: contain;
     background-color: rgb(255, 226, 125);
     border: 4px solid black;
