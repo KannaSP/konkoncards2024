@@ -25,7 +25,7 @@
 .LETTER{
     position: relative;
     height: 100%;
-    aspect-ratio: 325 / 226;
+    aspect-ratio: 226 / 325;
     transition: transform 0.5s;
     /* This flag is necessary for backface-visibility. */
     transform-style: preserve-3d; 
@@ -49,7 +49,6 @@
         z-index: 10;
         width: 100%;
         height: 100%;
-        background-color: green;
         
         /* This will hide the backside of the class object, 
         so we can easily just use CSS Transform instead of hide/unhide. */
@@ -59,13 +58,11 @@
         /* Card Layer, Frontside. */
         &.layer_5_card_front{
             z-index: 10;
-            background-color: dodgerblue;
         }
         
         /* Card Layer, Backside. */
         &.layer_5_card_back{
             z-index: 10;
-            background-color: purple;
             transform: rotateX(180deg);
         }
         
@@ -92,7 +89,8 @@
     height: 80%;
     margin: auto;
     text-align: center;
-    background-color: red;
+    background-color: rgb(16,36,52);
+    color: white;
 }
 
 @keyframes opacity_reveal_enlarge {
@@ -253,7 +251,6 @@
         position: absolute;
         width: 100%;
         height: 100%;
-        background-color: green;
         
         /* This will hide the backside of the class object, 
         so we can easily just use CSS Transform instead of hide/unhide. */
