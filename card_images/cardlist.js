@@ -18,12 +18,16 @@ function set_localitem_bulk(){
 function get_localitem_bulk(){
     var pure_json_text = window.localStorage.getItem("persistent_card_list");
     persistent_card_list = JSON.parse(pure_json_text);
+    if(persistent_card_list == null) return null;
     console.log("persistent card list : "+persistent_card_list.length);
-    return persistent_card_list.length;
+    return persistent_card_list;
 }
 
 export function card_list_initialization(reinitialization_flag) {
     //Try retrieving previous item, this method could be a reinitialization.
+    if( get_localitem_bulk() == null) {
+        return persistent_card_list = server_card_list;
+    }
     if(persistent_card_list.length == 0) {
         return persistent_card_list = server_card_list;
     }
@@ -37,7 +41,6 @@ export function card_list_initialization(reinitialization_flag) {
         reinitialization_flag = 0;
         return persistent_card_list;
     }
-    get_localitem_bulk();
     if( check_card_list_integrity() ) {
         console.log("Card list integrity preserved (length-checked) \
         will continue to use old local data.");
