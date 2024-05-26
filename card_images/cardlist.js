@@ -24,9 +24,8 @@ function get_localitem_bulk(){
 
 export function card_list_initialization(reinitialization_flag) {
     //Try retrieving previous item, this method could be a reinitialization.
-    get_localitem_bulk();
     if(persistent_card_list.length == 0) {
-        persistent_card_list = server_card_list;
+        return persistent_card_list = server_card_list;
     }
     if(reinitialization_flag == 1){
         console.log("WARNING! Re-initialization flag triggered! \
@@ -36,19 +35,19 @@ export function card_list_initialization(reinitialization_flag) {
         console.log("Re-initialization completed! All data \
             synchronized to the server's data.");
         reinitialization_flag = 0;
+        return persistent_card_list;
     }
-    else{
-        if( check_card_list_integrity() ) {
-            console.log("Card list integrity preserved (length-checked) \
-            will continue to use old local data.");
-        }
-        else {
-            console.log("Card List Integrity not preserved! \
-            resetting localStorage to new server_card_list");
-            reinitialization_flag = 1;
-            localsetitembulk(server_card_list);
-            persistent_card_list = server_card_list;
-        }
+    get_localitem_bulk();
+    if( check_card_list_integrity() ) {
+        console.log("Card list integrity preserved (length-checked) \
+        will continue to use old local data.");
+    }
+    else {
+        console.log("Card List Integrity not preserved! \
+        resetting localStorage to new server_card_list");
+        reinitialization_flag = 1;
+        localsetitembulk(server_card_list);
+        persistent_card_list = server_card_list;
     }
     return persistent_card_list;
 }
