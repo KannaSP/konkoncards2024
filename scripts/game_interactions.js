@@ -4,7 +4,7 @@
     3. 
 */
 
-import { pull_a_card } from './game.js';
+import { pull_a_card, save_all_local_data } from './game.js';
 
 
 /* Wallet Function */
@@ -67,6 +67,7 @@ export function coin_drop(ev){
         console.log("card pulled and set, entering animation");
         /* document.getElementById("ev_target_id").innerHTML = ev.target.id; */
         reveal_and_start_transition_video();
+        save_all_local_data();
     }
 }
 
@@ -135,6 +136,7 @@ function card_back_button() {
     pulled_card_full_display.classList.add("opacity_0");
     pulled_card_full_display.classList.remove("z_100");
     pulled_card_full_display.classList.remove("reveal_opacity");
+    
 }
 
 async function old_20240524_CA_animation_running() {
