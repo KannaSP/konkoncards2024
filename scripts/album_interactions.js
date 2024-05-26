@@ -1,6 +1,6 @@
-import { filenames } from '../card_images/cardlist.js';
+import { server_card_list } from '../card_images/cardlist.js';
 
-const card_array = filenames;
+const card_array = server_card_list;
 const card_folder_url_injection = "card_images/";
 const template_element_name = "card-collection-";
 const cards_per_shelf = 12;
@@ -212,7 +212,7 @@ function show_controls_z_float(){
 /* Testing section before separating into module */
 
 
-/* import { filenames } from '../card_images/cardlist.js';
+/* import { server_card_list } from '../card_images/cardlist.js';
  */
 /* const card_folder_url_injection = "card_images/";
 const card_array = [
