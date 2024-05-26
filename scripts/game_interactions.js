@@ -24,12 +24,12 @@ from the wallet's div to the coin's div. */
 
 export function wallet_open_coin(ev){
     ev.target.style.opacity = 1;
-    document.getElementById("wallet_img").src = "assets/Wallet_Asset_open.png";
+    document.getElementById("wallet_img").src = "assets/machine_assets/Wallet_Asset_open.png";
 }
 
 export function wallet_close_coin(ev){
     ev.target.style.opacity = 0;
-    document.getElementById("wallet_img").src = "assets/Wallet_Asset_closed.png";
+    document.getElementById("wallet_img").src = "assets/machine_assets/Wallet_interact_cut.png";
 }
 
 
