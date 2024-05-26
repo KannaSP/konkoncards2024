@@ -6,7 +6,7 @@ const server_card_list = [
     { "artist" : "ikki", "front_art" : "FubuKingdom.png", "back_art" : "FubuLetter.png", "pulled" : "false" }
 ];
 
-export var persistent_card_list = [];
+var persistent_card_list = [];
 var persistent_card_list_length_longer_flag = false;
 
 function set_localitem_bulk(){
@@ -50,6 +50,7 @@ export function card_list_initialization(reinitialization_flag) {
             persistent_card_list = server_card_list;
         }
     }
+    return persistent_card_list;
 }
 
 function check_card_list_integrity() {

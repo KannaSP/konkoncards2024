@@ -24,8 +24,8 @@
 
 .LETTER{
     position: relative;
-    width: 100%;
     height: 100%;
+    aspect-ratio: 325 / 226;
     transition: transform 0.5s;
     /* This flag is necessary for backface-visibility. */
     transform-style: preserve-3d; 
@@ -72,7 +72,6 @@
         &.layer_5_card_back img{
             height: 100%;
             width: 100%;
-            object-fit: cover;
         }
         
     }
@@ -80,7 +79,7 @@
 }
 
 .LETTER:hover{
-    transform: rotateX(180deg); /* Rotate along the Y-axis (vertical) */
+    transform: rotateX(180deg) translateY(-100%); /* Rotate along the X-axis (vertical) */
 }
 
 /* Card Display */
