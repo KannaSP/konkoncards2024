@@ -1,6 +1,6 @@
-import { server_card_list } from '../card_images/cardlist.js';
+import { card_list_initialization } from '../card_images/cardlist.js';
 
-const card_array = server_card_list;
+const card_array = card_list_initialization;
 const card_folder_url_injection = "card_images/";
 const template_element_name = "card-collection-";
 const cards_per_shelf = 12;
@@ -126,12 +126,23 @@ function open_full_size_display() {
         fullscreen_display.classList.add("reveal_opacity");
         fullscreen_display.classList.add("z_100");
         var fullscreen_image = document.getElementById("fullscreen_image");
-        fullscreen_image.src = card_folder_url_injection + card_array[card_array_number].front_art;
-        fullscreen_image.style.zIndex = 200;
-        current_card_number = card_array_number;
-        
-        current_card_face = fullscreen_image.src;
-        next_card_face = card_folder_url_injection + card_array[card_array_number].back_art;
+        if(!card_array[card_array_number].pulled){
+            
+            fullscreen_image.src = card_folder_url_injection + "play_card.png";
+            fullscreen_image.style.zIndex = 200;
+            current_card_number = card_array_number;
+            
+            current_card_face = fullscreen_image.src;
+            next_card_face = card_folder_url_injection + "play_card.png";
+        }
+        else{
+            fullscreen_image.src = card_folder_url_injection + card_array[card_array_number].front_art;
+            fullscreen_image.style.zIndex = 200;
+            current_card_number = card_array_number;
+            
+            current_card_face = fullscreen_image.src;
+            next_card_face = card_folder_url_injection + card_array[card_array_number].back_art;
+        }
     }
 }
 
@@ -253,20 +264,25 @@ function populate_visible_element(shelf_number) {
     console.log("shnum"+shelf_number);
     while( counter < cards_per_shelf )
     {
+        var working_index = starting_data_number + counter;
         /* Adding 1 because to prevent off by one error. You can guess what happened in the album.html */
         image_element = document.getElementById(element_name);
-        if(card_array[starting_data_number + counter] == null){
+        if(card_array[working_index] == null){
             image_url = "Play card.webp";
             image_element.dataset.arrnum = -10;
         }
         else{
-            image_url = card_array[starting_data_number + counter].front_art.replace(".png", ".webp");
-            image_element.dataset.arrnum = starting_data_number + counter;
+            if(!card_array[working_index].pulled) {
+                image_url = "Play card.webp";
+            } else {
+                image_url = card_array[working_index].front_art.replace(".png", ".webp");
+            }
+            image_element.dataset.arrnum = working_index;
         }
         if(image_element == null) break;
         image_element.src = card_folder_url_injection + "thumb_" + image_url;
         counter++;
-        var element_name = template_element_name + (starting_element_number + counter);
+        var element_name = template_element_name + working_index;
         console.log(element_name);
     }
 }

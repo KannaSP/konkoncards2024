@@ -28,6 +28,12 @@ function set_localitem_bulk(){
     console.log("persistent card list built / rebuilt. String length: "+pure_json_text.length);
 }
 
+export function set_localitem_ext(external_card_list){
+    var pure_json_text = JSON.stringify(external_card_list);
+    window.localStorage.setItem("persistent_card_list", pure_json_text);
+    console.log("persistent card list built / rebuilt. String length: "+pure_json_text.length);
+}
+
 function get_localitem_bulk(){
     var pure_json_text = window.localStorage.getItem("persistent_card_list");
     persistent_card_list = JSON.parse(pure_json_text);
