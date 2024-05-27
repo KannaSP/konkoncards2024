@@ -61,6 +61,11 @@
             object-fit: contain;
         }
         
+        &.layer_5_card_front img{
+            height: 100%;
+            width: 100%;
+        }
+        
         /* Card Layer, Backside. */
         &.layer_5_card_back{
             z-index: 10;
