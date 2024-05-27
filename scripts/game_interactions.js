@@ -9,12 +9,12 @@ import { pull_a_card, save_all_local_data } from './game.js';
 
 /* Wallet Function */
 export function wallet_open(ev){
-    ev.target.src = "assets/Wallet_Asset_open.png";
+    ev.target.src = "assets/machine_assets/Wallet_Asset_open.png";
     document.getElementById("coin_container").style.opacity = 1;
 }
 
 export function wallet_close(ev){
-    ev.target.src = "assets/Wallet_Asset_closed.png";
+    ev.target.src = "assets/machine_assets/Wallet_interact_cut.png";
     document.getElementById("coin_container").style.opacity = 0;
 }
 
