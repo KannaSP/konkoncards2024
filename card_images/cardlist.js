@@ -6,6 +6,19 @@ const server_card_list = [
     { "artist" : "ikki", "front_art" : "FubuKingdom.png", "back_art" : "FubuLetter.png", "pulled" : "false" }
 ];
 
+const remote_update_flag = "2024_05_27update01";
+const remote_update_flag_name = "White Prinyan";
+var big_red_reset_button_flag = false;
+export function last_position_reset_required_query() {
+    return big_red_reset_button_flag;
+}
+/* Please put used remote_update_flags below:
+2024_05_27update01, 
+
+
+ */
+
+
 var persistent_card_list = [];
 var persistent_card_list_length_longer_flag = false;
 
@@ -23,6 +36,23 @@ function get_localitem_bulk(){
     return persistent_card_list;
 }
 
+function get_update_flag(){
+    var previous_update_flag = window.localStorage.getItem(remote_update_flag_name)
+    
+    if(previous_update_flag == null) big_red_reset_button_flag = false;
+    
+    if(previous_update_flag.localeCompare(remote_update_flag) == 0) 
+        return previous_update_flag;
+    else big_red_reset_button_flag = true;
+    
+    return set_update_flag();
+}
+
+function set_update_flag(){    
+    window.localStorage.setItem(remote_update_flag_name, remote_update_flag);
+    return remote_update_flag;
+}
+
 export function card_list_initialization(reinitialization_flag) {
     //Try retrieving previous item, this method could be a reinitialization.
     if( get_localitem_bulk() == null) {
@@ -31,9 +61,11 @@ export function card_list_initialization(reinitialization_flag) {
     if(persistent_card_list.length == 0) {
         return persistent_card_list = server_card_list;
     }
-    if(reinitialization_flag == 1){
+    reinitialization_flag = big_red_reset_button_flag;
+    if(reinitialization_flag){
         console.log("WARNING! Re-initialization flag triggered! \
-            ALL DATA will be synchronized to the server's data");
+            ALL DATA will be synchronized to the server's data \
+            and last position");
         localsetitembulk(server_card_list);
         persistent_card_list = server_card_list;
         console.log("Re-initialization completed! All data \
@@ -102,6 +134,7 @@ function check_card_list_integrity() {
 
 export function save_current_data_to_localstorage(){
     set_localitem_bulk();
+    window.localStorage.setItem("update_required", remote_update_flag);
 }
 
 /* Use localstorage to store this data because of the pulled property.

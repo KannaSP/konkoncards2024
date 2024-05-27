@@ -170,3 +170,4 @@ window.coin_position_readjust = coin_position_readjust;
 window.coin_leaves_target = coin_leaves_target;
 window.reveal_card_pull_display = reveal_card_pull_display;
 window.card_back_button = card_back_button;
+window.reveal_game_section = reveal_game_section;

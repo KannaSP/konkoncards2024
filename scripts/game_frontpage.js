@@ -1,3 +1,35 @@
+var current_tutorial_page = 1;
+var tutorial_image = null;
+
+/* Welcome screen function */
+function reveal_game_section(){
+    console.log ("Revealing Game Section");
+    var welcome_video = document.getElementById("welcome_video");
+    welcome_video.classList.add("z_m1");
+    welcome_video.classList.add("opacity_0");
+    var game_section = document.getElementById("game_section");
+    game_section.classList.remove("opacity_0");
+    var tutorial_section_container = document.getElementById("tutorial_section_container");
+    tutorial_section_container.classList.remove("z_m1");
+    tutorial_section_container.classList.remove("opacity_0");
+    tutorial_image = document.getElementById("tutorial_image");
+    tutorial_image.src = "assets/tutorial/"+current_tutorial_page+".webp";
+}
+
+function advance_tutorial(){
+    console.log ("Next Tutorial Section");
+    if(current_tutorial_page++ >= 6) close_tutorial();
+    tutorial_image.src = "assets/tutorial/"+current_tutorial_page+".webp";
+}
+
+function close_tutorial(){
+    console.log ("Closing Tutorial Section");
+    var tutorial_section_container = document.getElementById("tutorial_section_container");
+    tutorial_section_container.classList.add("z_m1");
+    tutorial_section_container.classList.add("opacity_0");
+    current_tutorial_page = 0;
+}
+
 function start_game(){
     /* This function is temporarily unused */
     form_object = document.forms.user_number;

@@ -38,7 +38,11 @@
             <input id="volume_control_navbar" type="range" min="0" max="100" value="10" oninput="set_volume()">
         </ul>
     </div>
-    
+    <video id="welcome_video" src="assets/machine_assets/cutscene.mp4" 
+        type="video/mp4" class="welcome_video" 
+        onended="reveal_game_section()" autoplay muted disablepictureinpicture
+        >
+    </video>
     <!-- <div id="game_welcome_section" class="game_welcome_section">
         <div id="graphical-zone" class="graphical-zone">
             <img src="assets/Title 01.png" id="konkoncards" class="title_text" />
@@ -55,7 +59,14 @@
         </form>
     </div> -->
     
-    <div id="game_section" class="game_section z_1">
+    <div id="game_section" class="game_section z_1 opacity_0">
+        <div id="tutorial_section_container" class="z_m1 opacity_0 tutorial_section_container">
+            <img id="tutorial_image" class="tutorial_image" />
+            <div class="button_section">
+                <button id="advance_tutorial_button" type="button" onclick="advance_tutorial()">Next</button> 
+                <button id="close_tutorial_button" type="button" onclick="close_tutorial()">Close</button>
+            </div>
+        </div>
         <div id="transition_video_container" class="z_m1 opacity_0 transition_video_container">
             <video id="transition_video_content" src="assets/machine_assets/machine_animation.mp4" 
                 type="video/mp4" class="transition_video_content" 
@@ -63,14 +74,14 @@
                 >
             </video>
         </div>
-        <div id="pulled_card_full_display" class="">
+        <div id="pulled_card_full_display" class="z_m1 opacity_0">
             <button id="card_back_button" type="button" onclick="card_back_button()"></button>
             <div id="card_main_display" class="LETTER">
                 <div class="LETTER_content layer_5_card_front">
-                    <img id="LETTER_content_front" src="card_images/Kinoko_CardArt.png" class="image_contain" src="no_illustration.jpg" />
+                    <img id="LETTER_content_front" class="image_contain" src="no_illustration.jpg" />
                 </div>
                 <div class="LETTER_content layer_5_card_back">
-                    <img id="LETTER_content_back" src="card_images/Kinoko_CardBack.png" class="image_contain" src="no_illustration.jpg" />
+                    <img id="LETTER_content_back" class="image_contain" src="no_illustration.jpg" />
                 </div>
             </div>
             <p id="cardcaptor_caption" class="noto_sans_jp_p">No text inside</p>
