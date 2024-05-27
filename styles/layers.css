@@ -58,6 +58,7 @@
         /* Card Layer, Frontside. */
         &.layer_5_card_front{
             z-index: 10;
+            object-fit: contain;
         }
         
         /* Card Layer, Backside. */
