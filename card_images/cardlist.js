@@ -46,14 +46,20 @@ function get_update_flag(){
     var previous_update_flag = window.localStorage.getItem(remote_update_flag_name)
     
     if(previous_update_flag == "" || previous_update_flag == null) {
+        console.log("update flag not set yet");
         big_red_reset_button_flag = false;
         previous_update_flag = remote_update_flag;
         return set_update_flag();
     }
     
-    if(previous_update_flag.localeCompare(remote_update_flag) == 0) 
+    if(previous_update_flag.localeCompare(remote_update_flag) == 0) {
+        console.log("No update required.");
         return previous_update_flag;
-    else big_red_reset_button_flag = true;
+    }
+    else {
+        console.log("Update required.");
+        big_red_reset_button_flag = true;
+    }
     
     return set_update_flag();
 }
@@ -73,7 +79,7 @@ export function card_list_initialization(reinitialization_flag = false) {
         console.log("no cards detected. Copying from server data.");
         return persistent_card_list = server_card_list;
     }
-    reinitialization_flag = get_update_flag();
+    reinitialization_flag = big_red_reset_button_flag;
     if(reinitialization_flag){
         console.log("WARNING! Re-initialization flag triggered! \
             ALL DATA will be synchronized to the server's data \
