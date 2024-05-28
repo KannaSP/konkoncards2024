@@ -45,6 +45,10 @@
     align-items: center;
 }
 
+.reveal_all_cards{
+    max-height: 72px;
+}
+
 /* Album controls and pagination animation. */
 
 .album_controls{

@@ -26,8 +26,11 @@
             <li class="navbar_link_horz" id="navbar_link_02"><a href="game.html">Game</a></li>
             <li class="navbar_link_horz" id="navbar_link_03"><a href="credits.html">Credits</a></li>
             <li class="navbar_link_horz" id="navbar_link_04"><a href="album.html">Album</a></li>
-            <button id="mute_button_navbar" type="button" class="mute_button sound_off navbar_mute" value="mute/unmute" onclick="mute_toggle()"></button>
+            <button id="mute_button_navbar" type="button" 
+                class="mute_button sound_off navbar_mute" value="mute/unmute" onclick="mute_toggle()"></button>
             <input id="volume_control_navbar" type="range" min="0" max="100" value="10" oninput="set_volume()">
+            <button id="reveal_all_cards" type="button" 
+                class="reveal_all_cards" onclick="reveal_all_cards()"></button>
         </ul>
     </div>
     <div id="transition_screen" class="transition_screen trscreen_inactive">
