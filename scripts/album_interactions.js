@@ -1,6 +1,6 @@
 import { card_list_initialization } from '../card_images/cardlist.js';
 
-const card_array = card_list_initialization;
+const card_array = card_list_initialization();
 const card_folder_url_injection = "card_images/";
 const template_element_name = "card-collection-";
 const cards_per_shelf = 12;
@@ -70,7 +70,7 @@ function switch_page(next_page = false){
     transition_screen.classList.toggle('trscreen_inactive');
     transition_screen.classList.toggle('trscreen_active');
     /* Async action for letter animation sequence */
-    CA_animation_running();
+    //CA_animation_running();
     /* hide the current page */
     /* async load the thumbnails */
     populate_visible_element(current_shelf_number);
