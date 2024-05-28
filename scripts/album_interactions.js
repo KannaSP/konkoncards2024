@@ -281,14 +281,14 @@ function populate_visible_element(shelf_number) {
         image_element = document.getElementById(element_name);
         
         if(card_array[working_index] == null){
-            image_url = "Play card.webp";
+            image_url = "play_card.png";
             image_element.dataset.arrnum = -10;
         }
         else{
             console.log("Reveal All Cards: "+reveal_all_card_flag);
             if(!card_array[working_index].pulled || reveal_all_card_flag) {
                 console.log("hidden cards");
-                image_url = "Play card.webp";
+                image_url = "play_card.webp";
             } else {
                 image_url = card_array[working_index].front_art.replace(".png", ".webp");
             }
