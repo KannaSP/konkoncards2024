@@ -17,28 +17,28 @@ body {
 }
 
 .core_team_section_div {
-    background-image: url("../assets/Credit_BG_1_landscape.webp");
+    background-image: url("../assets/credit/Credit_BG_1_landscape.webp");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100% 100%;
 }
 
 .credits01_section_div {
-    background-image: url("../assets/Credit_BG_2_landscape.webp");
+    background-image: url("../assets/credit/Credit_BG_2_landscape.webp");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100% 100%;
 }
 
 .credits02_section_div {
-    background-image: url("../assets/Credit_BG_3_landscape.webp");
+    background-image: url("../assets/credit/Credit_BG_3_landscape.webp");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100% 100%;
 }
 
 .ending_section_div {
-    background-image: url("../assets/Credit_BG_4_landscape.webp");
+    background-image: url("../assets/credit/Credit_BG_4_landscape.webp");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100% 100%;
@@ -149,13 +149,13 @@ p {
 
 @media (orientation: portrait) {
     .core_team_section_div {
-        background-image: url("../assets/Credit_BG_1_landscape.webp");
+        background-image: url("../assets/credit/Credit_BG_1_landscape.webp");
         background-size: cover;
         background-position: right;
     }
 
     .credits01_section_div {
-        background-image: url("../assets/Credit_BG_2_landscape.webp");
+        background-image: url("../assets/credit/Credit_BG_2_landscape.webp");
         background-size: cover;
         background-position: right;
     }
