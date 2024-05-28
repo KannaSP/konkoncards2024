@@ -112,6 +112,8 @@ p{
     width: 120px;
     margin: 10px;
     font-size: 24px;
+    background-repeat: none;
+    background-size: fill;
 }
 
 #advance_tutorial_button {
