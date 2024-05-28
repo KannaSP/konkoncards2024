@@ -288,7 +288,7 @@ function populate_visible_element(shelf_number) {
             console.log("Reveal All Cards: "+reveal_all_card_flag);
             if(!card_array[working_index].pulled || reveal_all_card_flag) {
                 console.log("hidden cards");
-                image_url = "play_card.webp";
+                image_url = "play_card.png";
             } else {
                 image_url = card_array[working_index].front_art.replace(".png", ".webp");
             }
