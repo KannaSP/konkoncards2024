@@ -109,51 +109,51 @@
     height: 100%;
     position: absolute;
     z-index: 100;
+    object-fit: contain;
 }
 
 .homepage-card{
-    left: 80%;
-    width: 40%;
+    max-width: 320px;
     position: absolute;
     z-index: 100;
     opacity: 90%;
+    object-fit: scale-down;
 }
 
-.play-card{
-    width: 35%;
+.first-card-upper-right{
     left: 50%;
     top: 5%;
     transform: translate(0px, 0px) rotate(0deg);
     transition: 1s;
 }
 
-.collection-card{
+.second-card-middle{
     left: 0%;
     top: 30%;
     transform: translate(0px, 0px) rotate(0deg);
     transition: 1s;
 }
 
-.credit-card{
+.third-card{
     left: 35%;
     top: 53%;
     transform: translate(0px, 0px) rotate(0deg);
     transition: 1s;
 }
 
-img.play-card:hover{
+img.first-card-upper-right:hover{
     transform: translate(-10px, -10px) rotate(10deg);
     transition: 1s;
     opacity: 100%;
 }
 
-img.collection-card:hover{
+img.second-card-middle:hover{
     transform: translate(0px, -20px);
     transition: 1s;
     opacity: 100%;
 }
 
-img.credit-card:hover{
+img.third-card:hover{
     transform: translate(-15px, 10px) rotate(-20deg);
     transition: 1s;
     opacity: 100%;  
@@ -197,20 +197,21 @@ TODO: Change this to mobile-first later, if a lot of people uses this.
         z-index: 100;
     }
     
-    .play-card{
-        width: 20%; 
+    .homepage-card{
+        max-width: 200px;
+    }
+    
+    .first-card-upper-right{
         left: 10%;
         top: 20%;
     }
 
-    .collection-card{
-        width: 25%; 
+    .second-card-middle{
         left: 40%;
         top: 20%;
     }
 
-    .credit-card{
-        width: 25%; 
+    .third-card{
         left: 70%;
         top: 20%;
     }
@@ -257,18 +258,21 @@ TODO: Change this to mobile-first later, if a lot of people uses this.
         grid-template-columns: auto auto auto;        
     }
     
-    .play-card{
+    .homepage-card{
+        max-width: 300px;
+    }
+    
+    .first-card-upper-right{
         content: url("../assets/mobile/Menu/play.png");
-        width: 25%; 
         top: 80%;
     }
 
-    .collection-card{
+    .second-card-middle{
         content: url("../assets/mobile/Menu/Collection.png");
         top: 80%;
     }
 
-    .credit-card{
+    .third-card{
         content: url("../assets/mobile/Menu/Credit.png");
         top: 80%;
     }

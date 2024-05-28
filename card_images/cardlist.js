@@ -67,7 +67,7 @@ export function card_list_initialization(reinitialization_flag) {
     if(persistent_card_list.length == 0) {
         return persistent_card_list = server_card_list;
     }
-    reinitialization_flag = big_red_reset_button_flag;
+    reinitialization_flag = get_update_flag();
     if(reinitialization_flag){
         console.log("WARNING! Re-initialization flag triggered! \
             ALL DATA will be synchronized to the server's data \
