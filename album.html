@@ -33,7 +33,7 @@
     <div id="transition_screen" class="transition_screen trscreen_inactive">
         <img id="transition_letter_image" src="assets/LETTER.png" class="transition_letter_image" alt="Love Letter for Fubuki"></img>
     </div>
-    <div id="fullscreen_display" class="fullscreen_display_container opacity_0 z_m1" onclick="close_full_size_display()">
+    <div id="fullscreen_display" class="opacity_0 z_m1 fullscreen_display_container" onclick="close_full_size_display()">
         <img id="fullscreen_image" class="fullscreen_image" onclick="flip_card()">
         </img>
         <div id="controls_bar" class="controls_bar_container">
@@ -84,6 +84,6 @@
     </div>
     <script type="text/javascript" src="scripts/audioplayer.js"></script> 
     <script type="text/javascript" src="scripts/album.js"></script> 
-    <script type="text/javascript" src="scripts/album_interactions.js"></script> 
+    <script type="module" src="scripts/album_interactions.js"></script> 
   </body>
 </html>

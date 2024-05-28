@@ -81,11 +81,11 @@ function switch_page(next_page = false){
     }
 }
 
-function prev_page(){
+export function prev_page(){
     switch_page(false);
 }
 
-function next_page(){
+export function next_page(){
     switch_page(true);
 }
 
@@ -111,7 +111,7 @@ var flag_hidden_controls = false;
 
 var current_card_number = 0;
 
-function open_full_size_display() {
+export function open_full_size_display() {
     if ( flip_card_triggered == true ) {
         flip_card_triggered = false;
         return;
@@ -146,7 +146,7 @@ function open_full_size_display() {
     }
 }
 
-function close_full_size_display() {
+export function close_full_size_display() {
     if(flag_hidden_controls == true){
         flag_hidden_controls = false;
         control_bar = document.getElementById("controls_bar");
@@ -169,7 +169,7 @@ function close_full_size_display() {
     flag_card_portrait_landscape_toggle = false;
 }
 
-function flip_card(){
+export function flip_card(){
     event.stopPropagation();
     flip_card_triggered = true;
     document.getElementById("fullscreen_image").src = next_card_face;
@@ -178,7 +178,7 @@ function flip_card(){
     next_card_face = temp_card_face;
 }
 
-function rotate_card_div(){
+export function rotate_card_div(){
     event.stopPropagation();
     var fullscreen_image = document.getElementById("fullscreen_image");
     if(flag_card_portrait_landscape_toggle == false){
@@ -191,21 +191,21 @@ function rotate_card_div(){
     }
 }
 
-function load_next_card_div(){
+export function load_next_card_div(){
     event.stopPropagation();
     var fullscreen_image = document.getElementById("fullscreen_image");
     if(++current_card_number > card_array.length - 1) current_card_number = card_array.length - 1;
     fullscreen_image.src = card_folder_url_injection + card_array[current_card_number].front_art;
 }
 
-function load_prev_card_div(){
+export function load_prev_card_div(){
     event.stopPropagation();
     var fullscreen_image = document.getElementById("fullscreen_image");
     if(--current_card_number < 0) current_card_number = 0;
     fullscreen_image.src = card_folder_url_injection + card_array[current_card_number].front_art;
 }
 
-function hide_controls_z_dive(){
+export function hide_controls_z_dive(){
     event.stopPropagation();
     var control_bar = document.getElementById("controls_bar");
     control_bar.classList.add("z_10");
@@ -213,7 +213,7 @@ function hide_controls_z_dive(){
     flag_hidden_controls = true;
 }
 
-function show_controls_z_float(){
+export function show_controls_z_float(){
     event.stopPropagation();
     document.getElementById("controls_bar").classList.remove("z_10");
     document.getElementById("controls_bar").classList.remove("hidden_opacity");
@@ -291,3 +291,14 @@ window.addEventListener("load", (event) => {
     initialize();
     populate_visible_element(current_shelf_number);
 });
+
+window.prev_page = prev_page;
+window.next_page = next_page;
+window.open_full_size_display = open_full_size_display;
+window.close_full_size_display = close_full_size_display;
+window.flip_card = flip_card;
+window.rotate_card_div = rotate_card_div;
+window.load_next_card_div = load_next_card_div;
+window.load_prev_card_div = load_prev_card_div;
+window.hide_controls_z_dive = hide_controls_z_dive;
+window.show_controls_z_float = show_controls_z_float;

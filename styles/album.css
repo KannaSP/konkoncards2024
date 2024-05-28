@@ -24,7 +24,6 @@
     background-size: cover;
     overflow: hidden;
     display: flex;
-    z-index: 1;
 }
 
 .fullscreen_image{
