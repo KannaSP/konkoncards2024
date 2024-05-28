@@ -7,6 +7,7 @@ var card_array = null;
 var next_page_index_number = 0;
 var current_shelf_number = 0;
 var flip_card_triggered = false;
+var reveal_all_card_flag = false;
 
 /* Pagination Logic 
     Animation logic copied from game.js
@@ -92,6 +93,10 @@ export function next_page(){
     switch_page(true);
 }
 
+export function reveal_all_card(){
+    reveal_all_card_flag = true;
+}
+
 function test_switch_page(){
     var transition_screen = document.getElementById('transition_screen');
     transition_screen.classList.toggle('trscreen_inactive');
@@ -129,7 +134,7 @@ export function open_full_size_display() {
         fullscreen_display.classList.add("reveal_opacity");
         fullscreen_display.classList.add("z_100");
         var fullscreen_image = document.getElementById("fullscreen_image");
-        if(!card_array[card_array_number].pulled){
+        if(!card_array[card_array_number].pulled || reveal_all_card_flag){
             
             fullscreen_image.src = card_folder_url_injection + "play_card.png";
             fullscreen_image.style.zIndex = 200;
@@ -281,7 +286,7 @@ function populate_visible_element(shelf_number) {
         }
         else{
             console.log(card_array[working_index].pulled);
-            if(!card_array[working_index].pulled) {
+            if(!card_array[working_index].pulled || reveal_all_card_flag) {
                 image_url = "Play card.webp";
             } else {
                 image_url = card_array[working_index].front_art.replace(".png", ".webp");
@@ -309,3 +314,4 @@ window.load_next_card_div = load_next_card_div;
 window.load_prev_card_div = load_prev_card_div;
 window.hide_controls_z_dive = hide_controls_z_dive;
 window.show_controls_z_float = show_controls_z_float;
+window.reveal_all_card = reveal_all_card;
