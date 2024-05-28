@@ -45,7 +45,7 @@ function get_localitem_bulk(){
 function get_update_flag(){
     var previous_update_flag = window.localStorage.getItem(remote_update_flag_name)
     
-    if(previous_update_flag == "" || previous_update_flag = null) {
+    if(previous_update_flag == "" || previous_update_flag == null) {
         big_red_reset_button_flag = false;
         previous_update_flag = remote_update_flag;
         return set_update_flag();
