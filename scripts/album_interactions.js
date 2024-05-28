@@ -1,9 +1,9 @@
 import { card_list_initialization } from '../card_images/cardlist.js';
 
-const card_array = null;
 const card_folder_url_injection = "card_images/";
 const template_element_name = "card-collection-";
 const cards_per_shelf = 12;
+var card_array = null;
 var next_page_index_number = 0;
 var current_shelf_number = 0;
 var flip_card_triggered = false;
