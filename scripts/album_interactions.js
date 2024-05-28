@@ -61,8 +61,13 @@ function switch_page(next_page = false){
         current_shelf_number--;
     }
     if((current_shelf_number*cards_per_shelf)  < 0) {
-        current_shelf_number++;
+        current_shelf_number = 0;
         console.log("npin"+next_page_index_number);
+        console.log("csnum"+current_shelf_number);
+    }
+    if((current_shelf_number*cards_per_shelf) >= card_array.length) {
+        current_shelf_number--;
+        console.log("calen"+card_array.length);
         console.log("csnum"+current_shelf_number);
     }
     /* Deactivating the transition page because it doesn't look good. */
@@ -77,11 +82,6 @@ function switch_page(next_page = false){
     /* async load the thumbnails */
     
     populate_visible_element(current_shelf_number);
-    if((current_shelf_number*cards_per_shelf) >= card_array.length) {
-        current_shelf_number--;
-        console.log("calen"+card_array.length);
-        console.log("csnum"+current_shelf_number);
-    }
 }
 
 export function prev_page(){
@@ -256,7 +256,7 @@ function initialize() {
         var image_element = document.getElementById(element_name);
         image_element.dataset.arrnum = counter;
         counter++;
-        element_name = template_element_name + ((starting_number + counter)%(cards_per_shelf+1));
+        element_name = template_element_name + ((starting_number + counter)%(cards_per_shelf)+1);
     }
 }
 
@@ -287,7 +287,7 @@ function populate_visible_element(shelf_number) {
         if(image_element == null) break;
         image_element.src = card_folder_url_injection + "thumb_" + image_url;
         counter++;
-        var element_name = template_element_name + working_index;
+        element_name = template_element_name + starting_element_number + counter;
         console.log(element_name);
     }
 }
