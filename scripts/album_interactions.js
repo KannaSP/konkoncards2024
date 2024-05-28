@@ -271,7 +271,10 @@ function populate_visible_element(shelf_number) {
     {
         var working_index = starting_data_number + counter;
         /* Adding 1 because to prevent off by one error. You can guess what happened in the album.html */
+        element_name = template_element_name + (starting_element_number + counter);
+        console.log(element_name);
         image_element = document.getElementById(element_name);
+        
         if(card_array[working_index] == null){
             image_url = "Play card.webp";
             image_element.dataset.arrnum = -10;
@@ -287,8 +290,6 @@ function populate_visible_element(shelf_number) {
         if(image_element == null) break;
         image_element.src = card_folder_url_injection + "thumb_" + image_url;
         counter++;
-        element_name = template_element_name + starting_element_number + counter;
-        console.log(element_name);
     }
 }
 
