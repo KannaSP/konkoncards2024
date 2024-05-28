@@ -114,6 +114,14 @@ p{
     font-size: 24px;
 }
 
+#advance_tutorial_button {
+    background-image: url("../assets/button/next_button_text_cut.png");
+}
+
+#close_tutorial_button {
+    background-image: url("../assets/button/close_button_text_cut.png");
+}
+
 /* .input_system label, input{
     width: 100%;
 } */

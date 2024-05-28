@@ -285,15 +285,19 @@ function populate_visible_element(shelf_number) {
             image_element.dataset.arrnum = -10;
         }
         else{
-            console.log(card_array[working_index].pulled);
+            console.log("Reveal All Cards: "+reveal_all_card_flag);
             if(!card_array[working_index].pulled || reveal_all_card_flag) {
+                console.log("hidden cards");
                 image_url = "Play card.webp";
             } else {
                 image_url = card_array[working_index].front_art.replace(".png", ".webp");
             }
             image_element.dataset.arrnum = working_index;
         }
-        if(image_element == null) break;
+        if(image_element == null){
+            console.log("Image element is missing! Please check album_interactions.");
+            break;
+        }
         image_element.src = card_folder_url_injection + "thumb_" + image_url;
         counter++;
     }
