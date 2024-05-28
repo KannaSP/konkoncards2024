@@ -181,7 +181,7 @@ body{
 
 /* Carddass Machine Wrapper */
 .carddass_machine_wrapper{
-    background-image: url("../assets/machine_assets/Machine_standby.webp");
+    background-image: url("../assets/machine_assets/machine_standby.webp");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
