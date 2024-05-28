@@ -65,14 +65,17 @@ function switch_page(next_page = false){
         console.log("npin"+next_page_index_number);
         console.log("csnum"+current_shelf_number);
     }
+    /* Deactivating the transition page because it doesn't look good. */
+    
     /* activate the transition page */
-    var transition_screen = document.getElementById('transition_screen');
+    /* var transition_screen = document.getElementById('transition_screen');
     transition_screen.classList.toggle('trscreen_inactive');
-    transition_screen.classList.toggle('trscreen_active');
+    transition_screen.classList.toggle('trscreen_active'); */
     /* Async action for letter animation sequence */
     //CA_animation_running();
     /* hide the current page */
     /* async load the thumbnails */
+    
     populate_visible_element(current_shelf_number);
     if((current_shelf_number*cards_per_shelf) >= card_array.length) {
         current_shelf_number--;
