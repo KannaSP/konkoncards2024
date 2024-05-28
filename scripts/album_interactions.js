@@ -280,6 +280,7 @@ function populate_visible_element(shelf_number) {
             image_element.dataset.arrnum = -10;
         }
         else{
+            console.log(card_array[working_index].pulled);
             if(!card_array[working_index].pulled) {
                 image_url = "Play card.webp";
             } else {
