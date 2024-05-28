@@ -260,7 +260,7 @@ function populate_visible_element(shelf_number) {
     var starting_element_number = 1;
     var starting_data_number = shelf_number * cards_per_shelf;
     var element_name = template_element_name + starting_element_number;
-    var image_url = "";
+    var image_url = ""; var image_element = null;
     console.log("shnum"+shelf_number);
     while( counter < cards_per_shelf )
     {
