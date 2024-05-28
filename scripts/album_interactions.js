@@ -1,6 +1,6 @@
 import { card_list_initialization } from '../card_images/cardlist.js';
 
-const card_array = card_list_initialization();
+const card_array = null;
 const card_folder_url_injection = "card_images/";
 const template_element_name = "card-collection-";
 const cards_per_shelf = 12;
@@ -237,6 +237,8 @@ const template_element_name = "card-collection-";
 const cards_per_shelf = 12; */
 
 function initialize() {
+    card_array = card_list_initialization();
+    
     /* Testing Stubs */
     console.log(card_array[0].artist);
     console.log(card_array[0].front_art);

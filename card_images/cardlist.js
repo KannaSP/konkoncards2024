@@ -63,7 +63,7 @@ function set_update_flag(){
     return remote_update_flag;
 }
 
-export function card_list_initialization(reinitialization_flag) {
+export function card_list_initialization(reinitialization_flag = false) {
     //Try retrieving previous item, this method could be a reinitialization.
     if( get_localitem_bulk() == null) {
         console.log("initializing for the very first time.");
