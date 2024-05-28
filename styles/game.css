@@ -113,11 +113,11 @@ p{
     margin: 10px;
     font-size: 24px;
     background-repeat: none;
-    background-size: 100% 100%;
+    background-size: 100% 100%  ;
 }
 
 #advance_tutorial_button {
-    background-image: url("../assets/button/next_button_text_cut.png");
+    background-image: url("../assets/button/close_button_text_cut.png");
 }
 
 #close_tutorial_button {
