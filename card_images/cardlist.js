@@ -45,7 +45,11 @@ function get_localitem_bulk(){
 function get_update_flag(){
     var previous_update_flag = window.localStorage.getItem(remote_update_flag_name)
     
-    if(previous_update_flag == null) big_red_reset_button_flag = false;
+    if(previous_update_flag == "" || previous_update_flag = null) {
+        big_red_reset_button_flag = false;
+        previous_update_flag = remote_update_flag;
+        return set_update_flag();
+    }
     
     if(previous_update_flag.localeCompare(remote_update_flag) == 0) 
         return previous_update_flag;
@@ -62,9 +66,11 @@ function set_update_flag(){
 export function card_list_initialization(reinitialization_flag) {
     //Try retrieving previous item, this method could be a reinitialization.
     if( get_localitem_bulk() == null) {
+        console.log("initializing for the very first time.");
         return persistent_card_list = server_card_list;
     }
     if(persistent_card_list.length == 0) {
+        console.log("no cards detected. Copying from server data.");
         return persistent_card_list = server_card_list;
     }
     reinitialization_flag = get_update_flag();

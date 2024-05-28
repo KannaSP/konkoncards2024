@@ -9,12 +9,12 @@ import { pull_a_card, save_all_local_data } from './game.js';
 
 /* Wallet Function */
 export function wallet_open(ev){
-    ev.target.src = "assets/machine_assets/Wallet_Asset_open.png";
+    ev.target.src = "assets/machine_assets/wallet_Asset_open.png";
     document.getElementById("coin_container").style.opacity = 1;
 }
 
 export function wallet_close(ev){
-    ev.target.src = "assets/machine_assets/Wallet_interact_cut.png";
+    ev.target.src = "assets/machine_assets/wallet_interact_cut.png";
     document.getElementById("coin_container").style.opacity = 0;
 }
 
@@ -24,12 +24,12 @@ from the wallet's div to the coin's div. */
 
 export function wallet_open_coin(ev){
     ev.target.style.opacity = 1;
-    document.getElementById("wallet_img").src = "assets/machine_assets/Wallet_Asset_open.png";
+    document.getElementById("wallet_img").src = "assets/machine_assets/wallet_Asset_open.png";
 }
 
 export function wallet_close_coin(ev){
     ev.target.style.opacity = 0;
-    document.getElementById("wallet_img").src = "assets/machine_assets/Wallet_interact_cut.png";
+    document.getElementById("wallet_img").src = "assets/machine_assets/wallet_interact_cut.png";
 }
 
 
