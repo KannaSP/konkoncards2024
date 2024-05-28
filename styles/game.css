@@ -113,7 +113,7 @@ p{
     margin: 10px;
     font-size: 24px;
     background-repeat: none;
-    background-size: fill;
+    background-size: 100% 100%;
 }
 
 #advance_tutorial_button {
