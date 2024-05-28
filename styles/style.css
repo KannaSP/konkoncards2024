@@ -188,11 +188,11 @@ Use pointer-events: none to disable the mouse control completely.
 }
 
 .sound_off {
-    background-image: url("../assets/button/Music_off.png");
+    background-image: url("../assets/button/music_off.png");
 }
 
 .sound_on {
-    background-image: url("../assets/button/Music.png");
+    background-image: url("../assets/button/music.png");
 }
 
 .navbar_horz #volume-control{

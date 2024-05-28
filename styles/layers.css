@@ -266,7 +266,7 @@
         /* Card Layer, Frontside. */
         &.coin_front{
             z-index: 0;
-            background-image: url("../assets/coin front.jpg");
+            background-image: url("../assets/machine_assets/coin.png");
             background-size: 50px;
         }
         

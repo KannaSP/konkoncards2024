@@ -84,7 +84,7 @@ export function card_list_initialization(reinitialization_flag = false) {
         console.log("WARNING! Re-initialization flag triggered! \
             ALL DATA will be synchronized to the server's data \
             and last position");
-        localsetitembulk(server_card_list);
+        set_localitem_ext(server_card_list);
         persistent_card_list = server_card_list;
         console.log("Re-initialization completed! All data \
             synchronized to the server's data.");
@@ -99,7 +99,7 @@ export function card_list_initialization(reinitialization_flag = false) {
         console.log("Card List Integrity not preserved! \
         resetting localStorage to new server_card_list");
         reinitialization_flag = 1;
-        localsetitembulk(server_card_list);
+        set_localitem_ext(server_card_list);
         persistent_card_list = server_card_list;
     }
     return persistent_card_list;
