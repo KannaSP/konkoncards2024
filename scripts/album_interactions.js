@@ -95,6 +95,7 @@ export function next_page(){
 
 export function reveal_all_card(){
     reveal_all_card_flag = true;
+    populate_visible_element(current_shelf_number):
 }
 
 function test_switch_page(){

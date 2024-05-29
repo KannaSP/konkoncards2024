@@ -46,7 +46,13 @@
 }
 
 .reveal_all_cards{
+    width: 120px;
     max-height: 72px;
+    background-image: url("../assets/menu/reveal_all_cards_button.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-color: #204852;
 }
 
 /* Album controls and pagination animation. */
