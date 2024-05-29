@@ -137,12 +137,12 @@ export function open_full_size_display() {
         var fullscreen_image = document.getElementById("fullscreen_image");
         if(!card_array[card_array_number].pulled || reveal_all_card_flag){
             
-            fullscreen_image.src = card_folder_url_injection + "play_card.png";
+            fullscreen_image.src = card_folder_url_injection + "locked_cards.png";
             fullscreen_image.style.zIndex = 200;
             current_card_number = card_array_number;
             
             current_card_face = fullscreen_image.src;
-            next_card_face = card_folder_url_injection + "play_card.png";
+            next_card_face = card_folder_url_injection + "locked_cards.png";
         }
         else{
             fullscreen_image.src = card_folder_url_injection + card_array[card_array_number].front_art;
@@ -180,6 +180,7 @@ export function close_full_size_display() {
 
 export function flip_card(){
     event.stopPropagation();
+    show_controls_z_float();
     flip_card_triggered = true;
     document.getElementById("fullscreen_image").src = next_card_face;
     temp_card_face = current_card_face;
@@ -189,6 +190,7 @@ export function flip_card(){
 
 export function rotate_card_div(){
     event.stopPropagation();
+    show_controls_z_float();
     var fullscreen_image = document.getElementById("fullscreen_image");
     if(flag_card_portrait_landscape_toggle == false){
         fullscreen_image.classList.toggle("rotate_90ccw_animation");
@@ -202,16 +204,30 @@ export function rotate_card_div(){
 
 export function load_next_card_div(){
     event.stopPropagation();
+    show_controls_z_float();
     var fullscreen_image = document.getElementById("fullscreen_image");
     if(++current_card_number > card_array.length - 1) current_card_number = card_array.length - 1;
-    fullscreen_image.src = card_folder_url_injection + card_array[current_card_number].front_art;
+    if(!card_array[current_card_number].pulled || reveal_all_card_flag){
+        fullscreen_image.src = card_folder_url_injection +  + "locked_cards.png";
+    }
+    else{
+        fullscreen_image.src = card_folder_url_injection 
+            + card_array[current_card_number].front_art;
+    }
 }
 
 export function load_prev_card_div(){
     event.stopPropagation();
+    show_controls_z_float();
     var fullscreen_image = document.getElementById("fullscreen_image");
     if(--current_card_number < 0) current_card_number = 0;
-    fullscreen_image.src = card_folder_url_injection + card_array[current_card_number].front_art;
+    if(!card_array[current_card_number].pulled || reveal_all_card_flag){
+        fullscreen_image.src = card_folder_url_injection +  + "locked_cards.png";
+    }
+    else{
+        fullscreen_image.src = card_folder_url_injection 
+            + card_array[current_card_number].front_art;
+    }
 }
 
 export function hide_controls_z_dive(){
@@ -282,7 +298,7 @@ function populate_visible_element(shelf_number) {
         image_element = document.getElementById(element_name);
         
         if(card_array[working_index] == null){
-            image_url = "play_card.png";
+            image_url = "locked_cards_size250.webp";
             image_element.dataset.arrnum = -10;
         }
         else{
@@ -291,7 +307,7 @@ function populate_visible_element(shelf_number) {
                 image_url = card_array[working_index].front_art.replace(".png", ".webp");
             } else {
                 console.log("hidden cards");
-                image_url = "play_card.png";
+                image_url = "locked_cards_size250.webp";
             }
             image_element.dataset.arrnum = working_index;
         }
