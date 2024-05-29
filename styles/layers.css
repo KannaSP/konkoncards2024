@@ -92,11 +92,10 @@
     left: 10%;
     top: 5%;
     width: 80%;
-    height: 80%;
+    height: 90%;
     margin: auto;
     text-align: center;
     background-color: rgb(16,36,52);
-    color: white;
 }
 
 @keyframes opacity_reveal_enlarge {
@@ -141,8 +140,16 @@
     top: 80%;
     width: 90%;
     height: 10%;
-    border: solid grey 12px;
-    border-radius: 5px;
+    padding-top: 30px;
+    color: black;
+    font-size: 14pt;
+/*     border: solid grey 12px;
+    border-radius: 5px; */
+    background-image: url("../assets/menu/game_card_text_box_cut.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
 }
 
 /* Animation chain, credits to : https://ccscoder.medium.com/chaining-css-animations-using-javascript-1b171708360e */
