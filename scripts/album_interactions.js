@@ -93,7 +93,7 @@ export function next_page(){
     switch_page(true);
 }
 
-export function reveal_all_card(){
+export function reveal_all_cards(){
     reveal_all_card_flag = true;
     populate_visible_element(current_shelf_number);
 }
