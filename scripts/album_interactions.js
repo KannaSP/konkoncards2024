@@ -288,10 +288,10 @@ function populate_visible_element(shelf_number) {
         else{
             console.log("Reveal All Cards: "+reveal_all_card_flag);
             if(!card_array[working_index].pulled || reveal_all_card_flag) {
+                image_url = card_array[working_index].front_art.replace(".png", ".webp");
+            } else {
                 console.log("hidden cards");
                 image_url = "play_card.png";
-            } else {
-                image_url = card_array[working_index].front_art.replace(".png", ".webp");
             }
             image_element.dataset.arrnum = working_index;
         }
@@ -319,4 +319,4 @@ window.load_next_card_div = load_next_card_div;
 window.load_prev_card_div = load_prev_card_div;
 window.hide_controls_z_dive = hide_controls_z_dive;
 window.show_controls_z_float = show_controls_z_float;
-window.reveal_all_card = reveal_all_card;
+window.reveal_all_cards = reveal_all_cards;
