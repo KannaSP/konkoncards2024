@@ -287,7 +287,7 @@ function populate_visible_element(shelf_number) {
         }
         else{
             console.log("Reveal All Cards: "+reveal_all_card_flag);
-            if(!card_array[working_index].pulled || reveal_all_card_flag) {
+            if(card_array[working_index].pulled || reveal_all_card_flag) {
                 image_url = card_array[working_index].front_art.replace(".png", ".webp");
             } else {
                 console.log("hidden cards");
