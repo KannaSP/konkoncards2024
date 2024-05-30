@@ -23,8 +23,6 @@
 }
 
 .LETTER{
-    position: relative;
-    height: 100%;
     aspect-ratio: 226 / 325;
     transition: transform 0.5s;
     /* This flag is necessary for backface-visibility. */
@@ -61,27 +59,17 @@
             object-fit: contain;
         }
         
-        &.layer_5_card_front img{
-            height: 100%;
-            width: 100%;
-        }
-        
         /* Card Layer, Backside. */
         &.layer_5_card_back{
             z-index: 10;
             transform: rotateX(180deg);
         }
         
-        &.layer_5_card_back img{
-            height: 100%;
-            width: 100%;
-        }
-        
     }
 
 }
 
-.LETTER:hover{
+#rotational_element:hover > .LETTER{
     transform: rotateX(180deg) translateY(-100%); /* Rotate along the X-axis (vertical) */
 }
 
@@ -93,9 +81,10 @@
     top: 5%;
     width: 80%;
     height: 90%;
-    margin: auto;
     text-align: center;
     background-color: rgb(16,36,52);
+    margin: 0;
+    display: inline;
 }
 
 @keyframes opacity_reveal_enlarge {
@@ -126,12 +115,18 @@
     height: 50px;
 }
 
-#card_main_display {
+/* If you want to make this mobile-responsive you'll have to change the priority
+from height to width when it crossed the square screen treshhold (orientation: portrait) */
+#rotational_element {
     position: absolute;
     left: 30%;
-    top: 5%;
-    width: 40%;
-    height: 75%;
+    top: 2%;
+    /* width: 40%; */
+    height: 200%;
+}
+
+#card_main_display {
+    height: 40%;
 }
 
 #cardcaptor_caption {
