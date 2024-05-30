@@ -2,10 +2,19 @@ import { card_list_initialization } from '../card_images/cardlist.js';
 
 const card_folder_url_injection = "card_images/";
 const template_element_name = "card-collection-";
-const cards_per_shelf = 12;
+const cards_per_shelf = 10;
+const decor_per_shelf = 2;
+const random_decorations_url_asacoco_injection_type = [
+    "assets/album/decorGreentea.png",
+    "assets/album/decorKorn.png",
+    "assets/album/decorNejimaFox.png",
+    "assets/album/decorSukonbu.png"
+];
+
 var card_array = null;
 var next_page_index_number = 0;
 var current_shelf_number = 0;
+var current_decor_number = 0;
 var flip_card_triggered = false;
 var reveal_all_card_flag = false;
 
@@ -288,14 +297,23 @@ function populate_visible_element(shelf_number) {
     var starting_data_number = shelf_number * cards_per_shelf;
     var element_name = template_element_name + starting_element_number;
     var image_url = ""; var image_element = null;
-    console.log("shnum"+shelf_number);
+    console.log("shnum : "+shelf_number);
+    console.log("cdnum : "+(current_decor_number = 0));
+    var random_numbers = [];
+    random_numbers.add(Math.ceil(Math.random() * 12));
+    random_numbers.add((1 + random_number + Math.ceil(Math.random() * 12)) % 12));
     while( counter < cards_per_shelf )
     {
-        var working_index = starting_data_number + counter;
+        var working_index = starting_data_number + counter - current_decor_number;
         /* Adding 1 because to prevent off by one error. You can guess what happened in the album.html */
         element_name = template_element_name + (starting_element_number + counter);
         console.log(element_name);
         image_element = document.getElementById(element_name);
+        
+        if(image_element == null){
+            console.log("Image element is missing! Please check album_interactions.");
+            break;
+        }
         
         if(card_array[working_index] == null){
             image_url = "locked_cards_size250.webp";
@@ -303,18 +321,24 @@ function populate_visible_element(shelf_number) {
         }
         else{
             console.log("Reveal All Cards: "+reveal_all_card_flag);
-            if(card_array[working_index].pulled || reveal_all_card_flag) {
+            if(counter == random_numbers[current_decor_number] 
+            && current_decor_number < decor_per_shelf) {
+                image_url = random_decorations_url_asacoco_injection_type[
+                    random_numbers[current_decor_number]
+                ];
+                image_element.dataset.arrnum = -10;
+                current_decor_number++;
+            }
+            else if(card_array[working_index].pulled || reveal_all_card_flag) {
                 image_url = card_array[working_index].front_art.replace(".png", ".webp");
             } else {
                 console.log("hidden cards");
                 image_url = "locked_cards_size250.webp";
+                image_element.dataset.arrnum = -10;
             }
             image_element.dataset.arrnum = working_index;
         }
-        if(image_element == null){
-            console.log("Image element is missing! Please check album_interactions.");
-            break;
-        }
+        
         image_element.src = card_folder_url_injection + "thumb_" + image_url;
         counter++;
     }
