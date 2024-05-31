@@ -1,206 +1,275 @@
 const server_card_list = [
     {
         "artist": "AnatoleSerial",
-        "front_art": "anatoleserial-01/front.png",
-        "back_art": "anatoleserial-01/back.png",
+        "front_art": "batch_001/anatoleserial_01/front.png",
+        "back_art": "batch_001/anatoleserial_01/back.png",
+        "thumbnail": "batch_001/anatoleserial_01/thumb_front.webp",
         "pulled": false
     },
     {
         "artist": "Arches",
-        "front_art": "arches-01/front.png",
-        "back_art": "arches-01/back.png",
+        "front_art": "batch_001/arches_01/front.png",
+        "back_art": "batch_001/arches_01/back.png",
+        "thumbnail": "batch_001/arches_01/thumb_front.webp",
         "pulled": false
     },
     {
         "artist": "Arsyn",
-        "front_art": "arsyn-01/front.png",
-        "back_art": "arsyn-01/back.png",
+        "front_art": "batch_001/arsyn_01/front.png",
+        "back_art": "batch_001/arsyn_01/back.png",
+        "thumbnail": "batch_001/arsyn_01/thumb_front.webp",
+        "pulled": false
+    },
+    {
+        "artist": "Berserk Asura",
+        "front_art": "batch_001/berserkasura_01/front.png",
+        "back_art": "batch_001/berserkasura_01/back.png",
+        "thumbnail": "batch_001/berserkasura_01/thumb_front.webp",
         "pulled": false
     },
     {
         "artist": "BorizArts",
-        "front_art": "borizarts-01/front.png",
-        "back_art": "borizarts-01/back.png",
+        "front_art": "batch_001/borizarts_01/front.png",
+        "back_art": "batch_001/borizarts_01/back.png",
+        "thumbnail": "batch_001/borizarts_01/thumb_front.webp",
         "pulled": false
     },
     {
         "artist": "corpshephard",
-        "front_art": "corpshephard-01/front.png",
-        "back_art": "corpshephard-01/back.png",
+        "front_art": "batch_001/corpshephard_01/front.png",
+        "back_art": "batch_001/corpshephard_01/back.png",
+        "thumbnail": "batch_001/corpshephard_01/thumb_front.webp",
         "pulled": false
     },
     {
         "artist": "Danbooru",
-        "front_art": "danboru-01/front.png",
-        "back_art": "danboru-01/back.png",
+        "front_art": "batch_001/danboru_01/front.png",
+        "back_art": "batch_001/danboru_01/back.png",
+        "thumbnail": "batch_001/danboru_01/thumb_front.webp",
         "pulled": false
     },
     {
         "artist": "Danbooru",
-        "front_art": "danboru-02/front.png",
-        "back_art": "danboru-02/back.png",
+        "front_art": "batch_001/danboru_02/front.png",
+        "back_art": "batch_001/danboru_02/back.png",
+        "thumbnail": "batch_001/danboru_02/thumb_front.webp",
         "pulled": false
     },
     {
         "artist": "Danbooru",
-        "front_art": "danboru-03/front.png",
-        "back_art": "danboru-03/back.png",
+        "front_art": "batch_001/danboru_03/front.png",
+        "back_art": "batch_001/danboru_03/back.png",
+        "thumbnail": "batch_001/danboru_03/thumb_front.webp",
         "pulled": false
     },
     {
         "artist": "Danbooru",
-        "front_art": "danboru-04/front.png",
-        "back_art": "danboru-04/back.png",
+        "front_art": "batch_001/danboru_04/front.png",
+        "back_art": "batch_001/danboru_04/back.png",
+        "thumbnail": "batch_001/danboru_04/thumb_front.webp",
+        "pulled": false
+    },
+    {
+        "artist": "FluffalDog",
+        "front_art": "batch_001/fluffaldog_01/front.png",
+        "back_art": "batch_001/fluffaldog_01/back.png",
+        "thumbnail": "batch_001/fluffaldog_01/thumb_front.webp",
         "pulled": false
     },
     {
         "artist": "freefloatkaleid",
-        "front_art": "freefloatkaleid-01/front.png",
-        "back_art": "freefloatkaleid-01/back.png",
+        "front_art": "batch_001/freefloatkaleid_01/front.png",
+        "back_art": "batch_001/freefloatkaleid_01/back.png",
+        "thumbnail": "batch_001/freefloatkaleid_01/thumb_front.webp",
         "pulled": false
     },
     {
-        "artist": "hakuoro",
-        "front_art": "hakuoro-01/front.png",
-        "back_art": "hakuoro-01/back.png",
+        "artist": "Hakuoro",
+        "front_art": "batch_001/hakuoro_01/front.png",
+        "back_art": "batch_001/hakuoro_01/back.png",
+        "thumbnail": "batch_001/hakuoro_01/thumb_front.webp",
         "pulled": false
     },
     {
         "artist": "Ikki",
-        "front_art": "ikki-01/front.png",
-        "back_art": "ikki-01/back.png",
+        "front_art": "batch_001/ikki_01/front.png",
+        "back_art": "batch_001/ikki_01/back.png",
+        "thumbnail": "batch_001/ikki_01/thumb_front.webp",
         "pulled": false
     },
     {
         "artist": "Kal",
-        "front_art": "kal-01/front.png",
-        "back_art": "kal-01/back.png",
+        "front_art": "batch_001/kal_01/front.png",
+        "back_art": "batch_001/kal_01/back.png",
+        "thumbnail": "batch_001/kal_01/thumb_front.webp",
         "pulled": false
     },
     {
-        "artist": "kazukuma",
-        "front_art": "kazukuma-01/front.png",
-        "back_art": "kazukuma-01/back.png",
+        "artist": "Kazukuma",
+        "front_art": "batch_001/kazukuma_01/front.png",
+        "back_art": "batch_001/kazukuma_01/back.png",
+        "thumbnail": "batch_001/kazukuma_01/thumb_front.webp",
         "pulled": false
     },
     {
         "artist": "Kinoko",
-        "front_art": "kinoko-01/front.png",
-        "back_art": "kinoko-01/back.png",
+        "front_art": "batch_001/kinoko_01/front.png",
+        "back_art": "batch_001/kinoko_01/back.png",
+        "thumbnail": "batch_001/kinoko_01/thumb_front.webp",
         "pulled": false
     },
     {
-        "artist": "knewbi",
-        "front_art": "knewbi-01/front.png",
-        "back_art": "knewbi-01/back.png",
+        "artist": "Knewbi",
+        "front_art": "batch_001/knewbi_01/front.png",
+        "back_art": "batch_001/knewbi_01/back.png",
+        "thumbnail": "batch_001/knewbi_01/thumb_front.webp",
         "pulled": false
     },
     {
         "artist": "le_mod",
-        "front_art": "le_mod-01/front.png",
-        "back_art": "le_mod-01/back.png",
+        "front_art": "batch_001/le_mod_01/front.png",
+        "back_art": "batch_001/le_mod_01/back.png",
+        "thumbnail": "batch_001/le_mod_01/thumb_front.webp",
         "pulled": false
     },
     {
         "artist": "Licorine",
-        "front_art": "licorine-01/front.png",
-        "back_art": "licorine-01/back.png",
+        "front_art": "batch_001/licorine_01/front.png",
+        "back_art": "batch_001/licorine_01/back.png",
+        "thumbnail": "batch_001/licorine_01/thumb_front.webp",
         "pulled": false
     },
     {
         "artist": "moh",
-        "front_art": "moh-01/front.png",
-        "back_art": "moh-01/back.png",
+        "front_art": "batch_001/moh_01/front.png",
+        "back_art": "batch_001/moh_01/back.png",
+        "thumbnail": "batch_001/moh_01/thumb_front.webp",
         "pulled": false
     },
     {
         "artist": "mofumofu",
-        "front_art": "mohumohu-01/front.png",
-        "back_art": "mohumohu-01/back.png",
+        "front_art": "batch_001/mohumohu_01/front.png",
+        "back_art": "batch_001/mohumohu_01/back.png",
+        "thumbnail": "batch_001/mohumohu_01/thumb_front.webp",
         "pulled": false
     },
     {
         "artist": "Naufuru",
-        "front_art": "naufuru-01/front.png",
-        "back_art": "naufuru-01/back.png",
+        "front_art": "batch_001/naufuru_01/front.png",
+        "back_art": "batch_001/naufuru_01/back.png",
+        "thumbnail": "batch_001/naufuru_01/thumb_front.webp",
         "pulled": false
     },
     {
         "artist": "Rarusel",
-        "front_art": "rarusel-01/front.png",
-        "back_art": "rarusel-01/back.png",
+        "front_art": "batch_001/primus_01/front.png",
+        "back_art": "batch_001/primus_01/back.png",
+        "thumbnail": "batch_001/primus_01/thumb_front.webp",
         "pulled": false
     },
     {
         "artist": "Rarusel",
-        "front_art": "rarusel-02/front.png",
-        "back_art": "rarusel-02/back.png",
+        "front_art": "batch_001/rarusel_01/front.png",
+        "back_art": "batch_001/rarusel_01/back.png",
+        "thumbnail": "batch_001/rarusel_01/thumb_front.webp",
         "pulled": false
     },
     {
         "artist": "Rarusel",
-        "front_art": "rarusel-03/front.png",
-        "back_art": "rarusel-03/back.png",
+        "front_art": "batch_001/rarusel_02/front.png",
+        "back_art": "batch_001/rarusel_02/back.png",
+        "thumbnail": "batch_001/rarusel_02/thumb_front.webp",
         "pulled": false
     },
     {
         "artist": "Rarusel",
-        "front_art": "rarusel-04/front.png",
-        "back_art": "rarusel-04/back.png",
+        "front_art": "batch_001/rarusel_03/front.png",
+        "back_art": "batch_001/rarusel_03/back.png",
+        "thumbnail": "batch_001/rarusel_03/thumb_front.webp",
         "pulled": false
     },
     {
         "artist": "Rarusel",
-        "front_art": "rarusel-05/front.png",
-        "back_art": "rarusel-05/back.png",
+        "front_art": "batch_001/rarusel_04/front.png",
+        "back_art": "batch_001/rarusel_04/back.png",
+        "thumbnail": "batch_001/rarusel_04/thumb_front.webp",
         "pulled": false
     },
     {
         "artist": "Rarusel",
-        "front_art": "rarusel-06/front.png",
-        "back_art": "rarusel-06/back.png",
+        "front_art": "batch_001/rarusel_05/front.png",
+        "back_art": "batch_001/rarusel_05/back.png",
+        "thumbnail": "batch_001/rarusel_05/thumb_front.webp",
+        "pulled": false
+    },
+    {
+        "artist": "Rarusel",
+        "front_art": "batch_001/rarusel_06/front.png",
+        "back_art": "batch_001/rarusel_06/back.png",
+        "thumbnail": "batch_001/rarusel_06/thumb_front.webp",
         "pulled": false
     },
     {
         "artist": "Ruanronan",
-        "front_art": "ruanronan-01/front.png",
-        "back_art": "ruanronan-01/back.png",
+        "front_art": "batch_001/ruanronan_01/front.png",
+        "back_art": "batch_001/ruanronan_01/back.png",
+        "thumbnail": "batch_001/ruanronan_01/thumb_front.webp",
         "pulled": false
     },
     {
         "artist": "Sani",
-        "front_art": "s4ni-01/front.png",
-        "back_art": "s4ni-01/back.png",
+        "front_art": "batch_001/s4ni_01/front.png",
+        "back_art": "batch_001/s4ni_01/back.png",
+        "thumbnail": "batch_001/s4ni_01/thumb_front.webp",
         "pulled": false
     },
     {
         "artist": "Sani",
-        "front_art": "s4ni-02/front.png",
-        "back_art": "s4ni-02/back.png",
+        "front_art": "batch_001/s4ni_02/front.png",
+        "back_art": "batch_001/s4ni_02/back.png",
+        "thumbnail": "batch_001/s4ni_02/thumb_front.webp",
         "pulled": false
     },
     {
         "artist": "Sayi50",
-        "front_art": "sayi50-01/front.png",
-        "back_art": "sayi50-01/back.png",
+        "front_art": "batch_001/sayi50_01/front.png",
+        "back_art": "batch_001/sayi50_01/back.png",
+        "thumbnail": "batch_001/sayi50_01/thumb_front.webp",
+        "pulled": false
+    },
+    {
+        "artist": "Third",
+        "front_art": "batch_001/third_01/front.jpg",
+        "back_art": "batch_001/third_01/back.png",
+        "thumbnail": "batch_001/third_01/thumb_front.webp",
+        "pulled": false
+    },
+    {
+        "artist": "Third",
+        "front_art": "batch_001/third_02/front.jpg",
+        "back_art": "batch_001/third_02/back.png",
+        "thumbnail": "batch_001/third_02/thumb_front.webp",
         "pulled": false
     },
     {
         "artist": "Vinyl Shark",
-        "front_art": "vinylshark-01/front.png",
-        "back_art": "vinylshark-01/back.png",
+        "front_art": "batch_001/vinylshark_01/front.png",
+        "back_art": "batch_001/vinylshark_01/back.png",
+        "thumbnail": "batch_001/vinylshark_01/thumb_front.webp",
         "pulled": false
     },
     {
         "artist": "yuntan",
-        "front_art": "yuntan-01/front.png",
-        "back_art": "yuntan-01/back.png",
+        "front_art": "batch_001/yuntan_01/front.png",
+        "back_art": "batch_001/yuntan_01/back.png",
+        "thumbnail": "batch_001/yuntan_01/thumb_front.webp",
         "pulled": false
     },
     {
         "artist": "Zeuxis",
-        "front_art": "Zeuxis-01/front.jpg",
-        "back_art": "Zeuxis-01/back.jpg",
+        "front_art": "batch_001/zeuxis_01/front.jpg",
+        "back_art": "batch_001/zeuxis_01/back.jpg",
+        "thumbnail": "batch_001/zeuxis_01/thumb_front.webp",
         "pulled": false
     }
 ];

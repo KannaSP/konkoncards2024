@@ -339,7 +339,7 @@ function populate_visible_element(shelf_number) {
             image_element.dataset.arrnum = working_index;
         }
         
-        image_element.src = card_folder_url_injection + "thumb_" + image_url;
+        image_element.src = card_folder_url_injection + card_array[working_index].thumbnail;
         counter++;
     }
 }
