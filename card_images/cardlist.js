@@ -119,6 +119,13 @@ const server_card_list = [
         "pulled": false
     },
     {
+        "artist": "Kinoko",
+        "front_art": "batch_001/kinoko_02/front.png",
+        "back_art": "batch_001/kinoko_02/back.png",
+        "thumbnail": "batch_001/kinoko_02/thumb_front.webp",
+        "pulled": false
+    },
+    {
         "artist": "Knewbi",
         "front_art": "batch_001/knewbi_01/front.png",
         "back_art": "batch_001/knewbi_01/back.png",
