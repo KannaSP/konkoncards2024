@@ -300,8 +300,8 @@ function populate_visible_element(shelf_number) {
     console.log("shnum : "+shelf_number);
     console.log("cdnum : "+(current_decor_number = 0));
     var random_numbers = [];
-    random_numbers.add(Math.ceil(Math.random() * 12));
-    random_numbers.add((1 + random_number + Math.ceil(Math.random() * 12)) % 12);
+    random_numbers.push(Math.ceil(Math.random() * 12));
+    random_numbers.push((1 + random_number + Math.ceil(Math.random() * 12)) % 12);
     while( counter < cards_per_shelf )
     {
         var working_index = starting_data_number + counter - current_decor_number;
