@@ -105,7 +105,7 @@
 
 #card_back_button{
     position: absolute;
-    left: 75%;
+    right: 10%;
     top: 5%;
     background-image: url("../assets/button/back_50px.png");
     background-position: center;
@@ -212,6 +212,10 @@ from height to width when it crossed the square screen treshhold (orientation: p
         background-image: url("../media/album_default_landscape_fallback.jpg");  
         min-height: 650 px;
         min-width: 452 px;
+    }
+
+    #rotational_element{
+        left: 15%;
     }
 }
 

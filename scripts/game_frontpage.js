@@ -1,4 +1,5 @@
 var current_tutorial_page = 1;
+var tutorial_end = 5;
 var tutorial_image = null;
 
 /* Welcome screen function */
@@ -18,7 +19,7 @@ function reveal_game_section(){
 
 function advance_tutorial(){
     console.log ("Next Tutorial Section");
-    if(current_tutorial_page++ >= 6) close_tutorial();
+    if(current_tutorial_page++ >= tutorial_end) close_tutorial();
     tutorial_image.src = "assets/tutorial/"+current_tutorial_page+".webp";
 }
 

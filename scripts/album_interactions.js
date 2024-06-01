@@ -4,6 +4,7 @@ const card_folder_url_injection = "card_images/";
 const template_element_name = "card-collection-";
 const cards_per_shelf = 10;
 const decor_per_shelf = 2;
+const shelf_capacity = cards_per_shelf + decor_per_shelf;
 const random_decorations_url_asacoco_injection_type = [
     "assets/album/decorGreentea_carded.png",
     "assets/album/decorKorn_carded.png",
@@ -64,22 +65,26 @@ async function CA_animation_running() {
 
 function switch_page(next_page = false){
     event.stopPropagation();
+    console.log("npin"+next_page_index_number);
+    console.log("csnum"+current_shelf_number);
     if(next_page){
         current_shelf_number++;
+        if (current_shelf_number*shelf_capacity >= card_array.length){
+            current_shelf_number--;
+            console.log("out of bounds");
+            return;
+        }
+        populate_visible_element(current_shelf_number);
+    }
+    else if((current_shelf_number*shelf_capacity) > 0){
+        current_shelf_number--;
+        populate_visible_element(current_shelf_number);
     }
     else{
-        current_shelf_number--;
+        console.log("not moving, probably less than one.");
     }
-    if((current_shelf_number*cards_per_shelf)  < 0) {
-        current_shelf_number = 0;
-        console.log("npin"+next_page_index_number);
-        console.log("csnum"+current_shelf_number);
-    }
-    if((current_shelf_number*cards_per_shelf) >= card_array.length) {
-        current_shelf_number--;
-        console.log("calen"+card_array.length);
-        console.log("csnum"+current_shelf_number);
-    }
+    console.log("npin"+next_page_index_number);
+    console.log("csnum"+current_shelf_number);
     /* Deactivating the transition page because it doesn't look good. */
     
     /* activate the transition page */
@@ -90,8 +95,6 @@ function switch_page(next_page = false){
     //CA_animation_running();
     /* hide the current page */
     /* async load the thumbnails */
-    
-    populate_visible_element(current_shelf_number);
 }
 
 export function prev_page(){
@@ -130,11 +133,11 @@ var flag_hidden_controls = false;
 var current_card_number = 0;
 
 export function open_full_size_display() {
-    if ( flip_card_triggered == true ) {
+    /* if ( flip_card_triggered == true ) {
         flip_card_triggered = false;
         return;
     }
-    else {
+    else { */
         /* unhidden the display div */
         var card_array_number = event.target.dataset.arrnum;
         if(card_array_number == -10) return;
@@ -144,16 +147,16 @@ export function open_full_size_display() {
         fullscreen_display.classList.add("reveal_opacity");
         fullscreen_display.classList.add("z_100");
         var fullscreen_image = document.getElementById("fullscreen_image");
-        if(!card_array[card_array_number].pulled || reveal_all_card_flag){
-            
-            fullscreen_image.src = card_folder_url_injection + "locked_cards.png";
-            fullscreen_image.style.zIndex = 200;
-            current_card_number = card_array_number;
-            
-            current_card_face = fullscreen_image.src;
-            next_card_face = card_folder_url_injection + "locked_cards.png";
-        }
-        else{
+        
+        /* pulled and revealed = open
+            pulled but not reveal = open
+            not pulled but revealed = open
+            not pulled and not revealed = close 
+            REMEMBER TO SET THE FLAGS CORRECTLY!
+        */
+        
+        if(card_array[card_array_number].pulled || reveal_all_card_flag){
+            console.log("fullsize display, revealed card");
             fullscreen_image.src = card_folder_url_injection + card_array[card_array_number].front_art;
             fullscreen_image.style.zIndex = 200;
             current_card_number = card_array_number;
@@ -161,7 +164,16 @@ export function open_full_size_display() {
             current_card_face = fullscreen_image.src;
             next_card_face = card_folder_url_injection + card_array[card_array_number].back_art;
         }
-    }
+        else{
+            console.log("reveal all cards: "+reveal_all_card_flag);
+            fullscreen_image.src = card_folder_url_injection + "locked_cards.png";
+            fullscreen_image.style.zIndex = 200;
+            current_card_number = card_array_number;
+            
+            current_card_face = fullscreen_image.src;
+            next_card_face = card_folder_url_injection + "locked_cards.png";
+        }
+    /* } */
 }
 
 export function close_full_size_display() {
@@ -192,7 +204,7 @@ export function flip_card(){
     show_controls_z_float();
     flip_card_triggered = true;
     document.getElementById("fullscreen_image").src = next_card_face;
-    temp_card_face = current_card_face;
+    var temp_card_face = current_card_face;
     current_card_face = next_card_face;
     next_card_face = temp_card_face;
 }
@@ -216,13 +228,16 @@ export function load_next_card_div(){
     show_controls_z_float();
     var fullscreen_image = document.getElementById("fullscreen_image");
     if(++current_card_number > card_array.length - 1) current_card_number = card_array.length - 1;
-    if(!card_array[current_card_number].pulled || reveal_all_card_flag){
-        fullscreen_image.src = card_folder_url_injection +  + "locked_cards.png";
-    }
-    else{
-        fullscreen_image.src = card_folder_url_injection 
+    current_card_face = card_folder_url_injection + "locked_cards.png";
+    next_card_face = card_folder_url_injection + "locked_cards.png";
+    if(card_array[current_card_number].pulled || reveal_all_card_flag){
+        
+        current_card_face = card_folder_url_injection 
             + card_array[current_card_number].front_art;
+        next_card_face = card_folder_url_injection 
+            + card_array[current_card_number].back_art;
     }
+    fullscreen_image.src = current_card_face;
 }
 
 export function load_prev_card_div(){
@@ -230,13 +245,16 @@ export function load_prev_card_div(){
     show_controls_z_float();
     var fullscreen_image = document.getElementById("fullscreen_image");
     if(--current_card_number < 0) current_card_number = 0;
-    if(!card_array[current_card_number].pulled || reveal_all_card_flag){
-        fullscreen_image.src = card_folder_url_injection +  + "locked_cards.png";
-    }
-    else{
-        fullscreen_image.src = card_folder_url_injection 
+    current_card_face = card_folder_url_injection + "locked_cards.png";
+    next_card_face = card_folder_url_injection + "locked_cards.png";
+    if(card_array[current_card_number].pulled || reveal_all_card_flag){
+        
+        current_card_face = card_folder_url_injection 
             + card_array[current_card_number].front_art;
+        next_card_face = card_folder_url_injection 
+            + card_array[current_card_number].back_art;
     }
+    fullscreen_image.src = current_card_face;
 }
 
 export function hide_controls_z_dive(){
@@ -281,13 +299,13 @@ function initialize() {
     var starting_number = 1;
     var element_name = template_element_name + starting_number;
     var counter = 0;
-    while( counter < card_array.length && counter < cards_per_shelf)
+    while( counter < card_array.length && counter < shelf_capacity)
     {
         console.log(element_name);
         var image_element = document.getElementById(element_name);
         image_element.dataset.arrnum = counter;
         counter++;
-        element_name = template_element_name + ((starting_number + counter)%(cards_per_shelf)+1);
+        element_name = template_element_name + ((starting_number + counter)%(shelf_capacity)+1);
     }
 }
 
@@ -303,9 +321,9 @@ function populate_visible_element(shelf_number) {
     random_numbers.push(Math.ceil(Math.random() * 11));
     random_numbers.push(Math.ceil(Math.random() * 11));
     if(random_numbers[0] == random_numbers[1]) 
-        random_numbers[1] = (random_numbers[1] + 1 ) % (cards_per_shelf + decor_per_shelf)
+        random_numbers[1] = (random_numbers[1] + 1 ) % shelf_capacity
     console.log("randnum: "+random_numbers[0]+"  "+random_numbers[1]);
-    while( counter < (cards_per_shelf+decor_per_shelf) )
+    while( counter < shelf_capacity )
     {
         var working_index = starting_data_number + counter - current_decor_number;
         /* Adding 1 because to prevent off by one error. You can guess what happened in the album.html */
@@ -319,12 +337,17 @@ function populate_visible_element(shelf_number) {
         }
         
         if(card_array[working_index] == null){
-            image_url = "locked_cards_size250.webp";
+            var random_decoration_number = ( Math.ceil(Math.random() * shelf_capacity )) % 4;
+            console.log("random_decoration_number :"+random_decoration_number);
+            image_url = random_decorations_url_asacoco_injection_type[
+                random_decoration_number
+            ];
             image_element.dataset.arrnum = -10;
+            image_element.src = image_url;
         }
         else{
             console.log("Reveal All Cards: "+reveal_all_card_flag);
-            if((counter == random_numbers[0] ||  counter == random_numbers[1] )
+            if((counter == random_numbers[0] || counter == random_numbers[1] )
             && current_decor_number < decor_per_shelf) {
                 console.log("random decor event");
                 image_url = random_decorations_url_asacoco_injection_type[
@@ -337,13 +360,13 @@ function populate_visible_element(shelf_number) {
             else if(card_array[working_index].pulled || reveal_all_card_flag) {
                 image_element.src = card_folder_url_injection 
                     + card_array[working_index].thumbnail;
+                image_element.dataset.arrnum = working_index;
             } else {
                 console.log("hidden cards");
                 image_url = "locked_cards_size250.webp";
                 image_element.dataset.arrnum = -10;
                 image_element.src = card_folder_url_injection + image_url;
             }
-            image_element.dataset.arrnum = working_index;
         }
         
         counter++;

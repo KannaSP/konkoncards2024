@@ -1,3 +1,8 @@
+body{
+    background-image: url("../assets/Menu_BG.png");
+    overflow: hidden;
+}
+
 ul{
     display: inline-block;
     text-align: left;
@@ -141,11 +146,6 @@ p{
     align-items : center;
     justify-content: center;
     font-size: 18pt;
-}
-
-body{
-    background-image: url("../assets/Menu_BG.png");
-    overflow: scroll;
 }
 
 /* Game Section */
@@ -381,4 +381,11 @@ body{
     border: 2px solid black;
     border-radius: 10px;
     background-color: rgb(255, 253, 163);
+}
+
+@media only screen and (max-width: 1000px){
+    .box_coin_insert {
+        grid-column: 11 / 13;
+        grid-row: 7 / 8;
+    }
 }

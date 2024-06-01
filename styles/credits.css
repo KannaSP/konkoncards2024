@@ -91,7 +91,7 @@ img{
 
 .ending_section_div h1 {
     margin-top: auto;
-    margin-bottom: min(58pt, 3%);
+    margin-bottom: min(45pt, 10%);
 }
 
 h1, p {
@@ -209,7 +209,7 @@ p {
 
     .ending_section_div h1 {
         margin-top: auto;
-        margin-bottom: 5%;
+        margin-bottom: 80px;
         font-size: 28pt;
     }
     
@@ -227,7 +227,7 @@ p {
 
     .ending_section_div h1 {
         margin-top: auto;
-        margin-bottom: 10%;
+        margin-bottom: 90px;
         font-size: 18pt;
     }
     
